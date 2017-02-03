@@ -24,4 +24,11 @@
 <outport> id = "-1" name = "tau to CSE mocell (only use for HIL testing)/x_0" width = "1" datatype = "0"</outport>
 <outport> id = "-1" name = "tau to CSE mocell (only use for HIL testing)/y_0" width = "1" datatype = "0"</outport>
 <outport> id = "-1" name = "tau to CSE mocell (only use for HIL testing)/integrator reset model" width = "1" datatype = "0"</outport>
+<outport> id = "-1" name = "Simple Thrust Allocation/u_VSP1" width = "1" datatype = "0"</outport>
+<outport> id = "-1" name = "Simple Thrust Allocation/alpha_VSP2" width = "1" datatype = "0"</outport>
+<outport> id = "-1" name = "Simple Thrust Allocation/alpha_VSP1" width = "1" datatype = "0"</outport>
+<outport> id = "-1" name = "Simple Thrust Allocation/u_VSP2" width = "1" datatype = "0"</outport>
+<outport> id = "-1" name = "Simple Thrust Allocation/u_BT" width = "1" datatype = "0"</outport>
+<outport> id = "-1" name = "Simple Thrust Allocation/omega_VSP1" width = "1" datatype = "0"</outport>
+<outport> id = "-1" name = "Simple Thrust Allocation/omega_VSP2" width = "1" datatype = "0"</outport>
 </portlist>
