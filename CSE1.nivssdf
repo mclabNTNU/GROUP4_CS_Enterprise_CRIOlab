@@ -10,7 +10,7 @@
 				<String>CSE1</String>
 			</Property>
 			<Property Name="Version">
-				<String>1.0.0.98</String>
+				<String>1.0.0.110</String>
 			</Property>
 			<Property Name="Creator">
 				<String />
@@ -5197,10 +5197,10 @@
 									<Double>10000</Double>
 								</Property>
 								<Property Name="DLL Size">
-									<I32>165424</I32>
+									<I32>166904</I32>
 								</Property>
 								<Property Name="DLL Timestamp">
-									<Double>3568959829.4958105</Double>
+									<Double>3569214315.3440638</Double>
 								</Property>
 								<Property Name="Decimation">
 									<I32>1</I32>
@@ -5233,7 +5233,7 @@
 									<Boolean>true</Boolean>
 								</Property>
 								<Property Name="MD5">
-									<String>60b445cfc45c541abd865548bcf065e1</String>
+									<String>8a1091940f68e4837f9c1ae7f0dd5907</String>
 								</Property>
 								<Property Name="NIVeriStandServer Port">
 									<U32>6012</U32>
@@ -5244,7 +5244,7 @@
 										<ForceDownload>false</ForceDownload>
 										<RTDestination>c:\ni-rt\system\ctrl_student_HIL.out</RTDestination>
 										<SupportedTarget>VxWorks</SupportedTarget>
-										<MD5>c908256cba3cc09e4157b81880b6c333</MD5>
+										<MD5>420e62d067349daf7b85893697fc8119</MD5>
 									</DependentFile>
 								</Property>
 								<Property Name="GlobalParameterScopes">
@@ -5747,7 +5747,7 @@
 										</DefaultValue>
 									</Channel>
 								</Section>
-								<Section Name="Simple Thrust Allocation" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
+								<Section Name="Thrust Allocation" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
 									<Description />
 									<Properties />
 									<Errors />
@@ -5755,7 +5755,7 @@
 										<Description />
 										<Properties>
 											<Property Name="Model Path">
-												<String>Simple Thrust Allocation/u_VSP1</String>
+												<String>Thrust Allocation/u_VSP1</String>
 											</Property>
 											<Property Name="Index">
 												<I32>25</I32>
@@ -5770,7 +5770,7 @@
 										<Description />
 										<Properties>
 											<Property Name="Model Path">
-												<String>Simple Thrust Allocation/alpha_VSP2</String>
+												<String>Thrust Allocation/alpha_VSP2</String>
 											</Property>
 											<Property Name="Index">
 												<I32>26</I32>
@@ -5785,7 +5785,7 @@
 										<Description />
 										<Properties>
 											<Property Name="Model Path">
-												<String>Simple Thrust Allocation/alpha_VSP1</String>
+												<String>Thrust Allocation/alpha_VSP1</String>
 											</Property>
 											<Property Name="Index">
 												<I32>27</I32>
@@ -5800,7 +5800,7 @@
 										<Description />
 										<Properties>
 											<Property Name="Model Path">
-												<String>Simple Thrust Allocation/u_VSP2</String>
+												<String>Thrust Allocation/u_VSP2</String>
 											</Property>
 											<Property Name="Index">
 												<I32>28</I32>
@@ -5815,7 +5815,7 @@
 										<Description />
 										<Properties>
 											<Property Name="Model Path">
-												<String>Simple Thrust Allocation/u_BT</String>
+												<String>Thrust Allocation/u_BT</String>
 											</Property>
 											<Property Name="Index">
 												<I32>29</I32>
@@ -5830,7 +5830,7 @@
 										<Description />
 										<Properties>
 											<Property Name="Model Path">
-												<String>Simple Thrust Allocation/omega_VSP1</String>
+												<String>Thrust Allocation/omega_VSP1</String>
 											</Property>
 											<Property Name="Index">
 												<I32>30</I32>
@@ -5845,7 +5845,7 @@
 										<Description />
 										<Properties>
 											<Property Name="Model Path">
-												<String>Simple Thrust Allocation/omega_VSP2</String>
+												<String>Thrust Allocation/omega_VSP2</String>
 											</Property>
 											<Property Name="Index">
 												<I32>31</I32>

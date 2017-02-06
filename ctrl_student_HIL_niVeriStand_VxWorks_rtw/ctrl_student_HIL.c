@@ -7,9 +7,9 @@
  *
  * Code generation for model "ctrl_student_HIL".
  *
- * Model version              : 1.97
+ * Model version              : 1.104
  * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
- * C source code generated on : Fri Feb 03 15:12:59 2017
+ * C source code generated on : Mon Feb 06 10:28:37 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -124,45 +124,45 @@ static void ctrl_student_HIL_output(void)
   int32_T i;
   real_T tmp;
 
-  /* MATLAB Function: '<S6>/MATLAB Function' incorporates:
+  /* MATLAB Function: '<S5>/MATLAB Function' incorporates:
    *  Constant: '<S1>/Step size'
-   *  Memory: '<S6>/counter'
+   *  Memory: '<S5>/counter'
    */
-  /* MATLAB Function 'Noise generator/Downsample	signal/MATLAB Function': '<S9>:1' */
-  /* '<S9>:1:3' */
+  /* MATLAB Function 'Noise generator/Downsample	signal/MATLAB Function': '<S8>:1' */
+  /* '<S8>:1:3' */
   if ((ctrl_student_HIL_DW.counter_PreviousInput + 1.0) *
       ctrl_student_HIL_P.Stepsize_Value >= (rtInf)) {
-    /* '<S9>:1:4' */
-    /* '<S9>:1:5' */
+    /* '<S8>:1:4' */
+    /* '<S8>:1:5' */
     ctrl_student_HIL_B.count = 0.0;
   } else {
-    /* '<S9>:1:7' */
+    /* '<S8>:1:7' */
     ctrl_student_HIL_B.count = ctrl_student_HIL_DW.counter_PreviousInput + 1.0;
   }
 
-  /* End of MATLAB Function: '<S6>/MATLAB Function' */
+  /* End of MATLAB Function: '<S5>/MATLAB Function' */
 
-  /* MATLAB Function: '<S7>/MATLAB Function1' incorporates:
+  /* MATLAB Function: '<S6>/MATLAB Function1' incorporates:
    *  Constant: '<S1>/Step size'
-   *  Memory: '<S7>/Hold'
+   *  Memory: '<S6>/Hold'
+   *  Product: '<S10>/Divide'
+   *  Product: '<S10>/Product'
    *  Product: '<S11>/Divide'
    *  Product: '<S11>/Product'
    *  Product: '<S12>/Divide'
    *  Product: '<S12>/Product'
-   *  Product: '<S13>/Divide'
-   *  Product: '<S13>/Product'
+   *  RandomNumber: '<S10>/White Noise'
    *  RandomNumber: '<S11>/White Noise'
    *  RandomNumber: '<S12>/White Noise'
-   *  RandomNumber: '<S13>/White Noise'
+   *  Sqrt: '<S10>/Sqrt'
    *  Sqrt: '<S11>/Sqrt'
    *  Sqrt: '<S12>/Sqrt'
-   *  Sqrt: '<S13>/Sqrt'
    *  Sum: '<S1>/Sum'
    */
-  /* MATLAB Function 'Noise generator/Sample & hold/MATLAB Function1': '<S10>:1' */
+  /* MATLAB Function 'Noise generator/Sample & hold/MATLAB Function1': '<S9>:1' */
   if (ctrl_student_HIL_B.count == 0.0) {
-    /* '<S10>:1:4' */
-    /* '<S10>:1:5' */
+    /* '<S9>:1:4' */
+    /* '<S9>:1:5' */
     ctrl_student_HIL_B.output[0] = sqrt(0.0 / ctrl_student_HIL_P.Stepsize_Value)
       * ctrl_student_HIL_DW.NextOutput + ctrl_student_HIL_B.x_in;
     ctrl_student_HIL_B.output[1] = sqrt(0.0 / ctrl_student_HIL_P.Stepsize_Value)
@@ -170,18 +170,18 @@ static void ctrl_student_HIL_output(void)
     ctrl_student_HIL_B.output[2] = sqrt(0.0 / ctrl_student_HIL_P.Stepsize_Value)
       * ctrl_student_HIL_DW.NextOutput_p + ctrl_student_HIL_B.psi_in;
   } else {
-    /* '<S10>:1:7' */
+    /* '<S9>:1:7' */
     ctrl_student_HIL_B.output[0] = ctrl_student_HIL_DW.Hold_PreviousInput[0];
     ctrl_student_HIL_B.output[1] = ctrl_student_HIL_DW.Hold_PreviousInput[1];
     ctrl_student_HIL_B.output[2] = ctrl_student_HIL_DW.Hold_PreviousInput[2];
   }
 
-  /* End of MATLAB Function: '<S7>/MATLAB Function1' */
+  /* End of MATLAB Function: '<S6>/MATLAB Function1' */
 
-  /* MATLAB Function: '<S3>/MATLAB Function' */
-  /* MATLAB Function 'Thrust Allocation/MATLAB Function': '<S15>:1' */
+  /* MATLAB Function: '<S2>/MATLAB Function' */
+  /* MATLAB Function 'Thrust Allocation/MATLAB Function': '<S13>:1' */
   /* Omega: Voith Scnheider rotational speed [rad/s] */
-  /* '<S15>:1:4' */
+  /* '<S13>:1:4' */
   ctrl_student_HIL_B.omega = 0.3;
 
   /* U_vsp thrust angle */
@@ -195,33 +195,33 @@ static void ctrl_student_HIL_output(void)
   /* T-matrix thrust allocation */
   /* K-matrix, saturation limits for thrusters */
   /* Setting the yaw moment into one variable */
-  /* '<S15>:1:27' */
+  /* '<S13>:1:27' */
   /* Solving the thrust allocation relation for the decomposed thrust */
-  /* '<S15>:1:30' */
+  /* '<S13>:1:30' */
   tmp = ctrl_student_HIL_B.R2_continuous - ctrl_student_HIL_B.L2_continuous;
   for (i = 0; i < 3; i++) {
-    u[i] = a[i + 6] * tmp + (a[i + 3] * ctrl_student_HIL_B.PosYRight + a[i] *
-      ctrl_student_HIL_B.PosXRight);
+    u[i] = a[i + 6] * tmp + (a[i + 3] * ctrl_student_HIL_B.PosXRight + a[i] *
+      ctrl_student_HIL_B.PosYRight);
   }
 
   /* Assigning the decomposed thrust */
-  /* '<S15>:1:33' */
-  /* '<S15>:1:34' */
-  /* '<S15>:1:35' */
+  /* '<S13>:1:33' */
+  /* '<S13>:1:34' */
+  /* '<S13>:1:35' */
   tmp = u[2];
 
   /* Calculating total VSP thrust */
-  /* '<S15>:1:38' */
+  /* '<S13>:1:38' */
   U_vsp = sqrt(u[0] * u[0] + u[1] * u[1]);
 
   /* Calculating thrust angle for VSP */
-  /* '<S15>:1:41' */
+  /* '<S13>:1:41' */
   ctrl_student_HIL_B.alpha = rt_atan2d_snf(u[1], u[0]);
 
   /* Saturation U_vsp */
   if (fabs(U_vsp) > 1.0) {
-    /* '<S15>:1:44' */
-    /* '<S15>:1:45' */
+    /* '<S13>:1:44' */
+    /* '<S13>:1:45' */
     if (U_vsp < 0.0) {
       U_vsp = -1.0;
     } else if (U_vsp > 0.0) {
@@ -235,8 +235,8 @@ static void ctrl_student_HIL_output(void)
 
   /* Saturation U_bt */
   if (fabs(u[2]) > 1.0) {
-    /* '<S15>:1:49' */
-    /* '<S15>:1:50' */
+    /* '<S13>:1:49' */
+    /* '<S13>:1:50' */
     if (u[2] < 0.0) {
       tmp = -1.0;
     } else if (u[2] > 0.0) {
@@ -252,31 +252,31 @@ static void ctrl_student_HIL_output(void)
   ctrl_student_HIL_B.U_vsp = U_vsp;
   ctrl_student_HIL_B.U_bt = tmp;
 
-  /* End of MATLAB Function: '<S3>/MATLAB Function' */
+  /* End of MATLAB Function: '<S2>/MATLAB Function' */
 }
 
 /* Model update function */
 static void ctrl_student_HIL_update(void)
 {
-  /* Update for Memory: '<S6>/counter' */
+  /* Update for Memory: '<S5>/counter' */
   ctrl_student_HIL_DW.counter_PreviousInput = ctrl_student_HIL_B.count;
 
-  /* Update for Memory: '<S7>/Hold' */
+  /* Update for Memory: '<S6>/Hold' */
   ctrl_student_HIL_DW.Hold_PreviousInput[0] = ctrl_student_HIL_B.output[0];
   ctrl_student_HIL_DW.Hold_PreviousInput[1] = ctrl_student_HIL_B.output[1];
   ctrl_student_HIL_DW.Hold_PreviousInput[2] = ctrl_student_HIL_B.output[2];
 
-  /* Update for RandomNumber: '<S12>/White Noise' */
+  /* Update for RandomNumber: '<S11>/White Noise' */
   ctrl_student_HIL_DW.NextOutput = rt_nrand_Upu32_Yd_f_pw_snf
     (&ctrl_student_HIL_DW.RandSeed) * ctrl_student_HIL_P.WhiteNoise_StdDev +
     ctrl_student_HIL_P.WhiteNoise_Mean;
 
-  /* Update for RandomNumber: '<S13>/White Noise' */
+  /* Update for RandomNumber: '<S12>/White Noise' */
   ctrl_student_HIL_DW.NextOutput_c = rt_nrand_Upu32_Yd_f_pw_snf
     (&ctrl_student_HIL_DW.RandSeed_j) * ctrl_student_HIL_P.WhiteNoise_StdDev_d +
     ctrl_student_HIL_P.WhiteNoise_Mean_h;
 
-  /* Update for RandomNumber: '<S11>/White Noise' */
+  /* Update for RandomNumber: '<S10>/White Noise' */
   ctrl_student_HIL_DW.NextOutput_p = rt_nrand_Upu32_Yd_f_pw_snf
     (&ctrl_student_HIL_DW.RandSeed_c) * ctrl_student_HIL_P.WhiteNoise_StdDev_g +
     ctrl_student_HIL_P.WhiteNoise_Mean_f;
@@ -309,15 +309,15 @@ static void ctrl_student_HIL_initialize(void)
     int32_T t;
     real_T tmp;
 
-    /* InitializeConditions for Memory: '<S6>/counter' */
+    /* InitializeConditions for Memory: '<S5>/counter' */
     ctrl_student_HIL_DW.counter_PreviousInput = ctrl_student_HIL_P.counter_X0;
 
-    /* InitializeConditions for Memory: '<S7>/Hold' */
+    /* InitializeConditions for Memory: '<S6>/Hold' */
     ctrl_student_HIL_DW.Hold_PreviousInput[0] = ctrl_student_HIL_P.Hold_X0;
     ctrl_student_HIL_DW.Hold_PreviousInput[1] = ctrl_student_HIL_P.Hold_X0;
     ctrl_student_HIL_DW.Hold_PreviousInput[2] = ctrl_student_HIL_P.Hold_X0;
 
-    /* InitializeConditions for RandomNumber: '<S12>/White Noise' */
+    /* InitializeConditions for RandomNumber: '<S11>/White Noise' */
     tmp = floor(ctrl_student_HIL_P.WhiteNoise_Seed);
     if (rtIsNaN(tmp) || rtIsInf(tmp)) {
       tmp = 0.0;
@@ -342,9 +342,9 @@ static void ctrl_student_HIL_initialize(void)
       (&ctrl_student_HIL_DW.RandSeed) * ctrl_student_HIL_P.WhiteNoise_StdDev +
       ctrl_student_HIL_P.WhiteNoise_Mean;
 
-    /* End of InitializeConditions for RandomNumber: '<S12>/White Noise' */
+    /* End of InitializeConditions for RandomNumber: '<S11>/White Noise' */
 
-    /* InitializeConditions for RandomNumber: '<S13>/White Noise' */
+    /* InitializeConditions for RandomNumber: '<S12>/White Noise' */
     tmp = floor(ctrl_student_HIL_P.WhiteNoise_Seed_b);
     if (rtIsNaN(tmp) || rtIsInf(tmp)) {
       tmp = 0.0;
@@ -369,9 +369,9 @@ static void ctrl_student_HIL_initialize(void)
       (&ctrl_student_HIL_DW.RandSeed_j) * ctrl_student_HIL_P.WhiteNoise_StdDev_d
       + ctrl_student_HIL_P.WhiteNoise_Mean_h;
 
-    /* End of InitializeConditions for RandomNumber: '<S13>/White Noise' */
+    /* End of InitializeConditions for RandomNumber: '<S12>/White Noise' */
 
-    /* InitializeConditions for RandomNumber: '<S11>/White Noise' */
+    /* InitializeConditions for RandomNumber: '<S10>/White Noise' */
     tmp = floor(ctrl_student_HIL_P.WhiteNoise_Seed_l);
     if (rtIsNaN(tmp) || rtIsInf(tmp)) {
       tmp = 0.0;
@@ -396,7 +396,7 @@ static void ctrl_student_HIL_initialize(void)
       (&ctrl_student_HIL_DW.RandSeed_c) * ctrl_student_HIL_P.WhiteNoise_StdDev_g
       + ctrl_student_HIL_P.WhiteNoise_Mean_f;
 
-    /* End of InitializeConditions for RandomNumber: '<S11>/White Noise' */
+    /* End of InitializeConditions for RandomNumber: '<S10>/White Noise' */
   }
 }
 
@@ -1297,8 +1297,8 @@ NI_Task NI_TaskList[] DataSection(".NIVS.tasklist") =
 int NI_NumTasks DataSection(".NIVS.numtasks") = 1;
 static char* NI_CompiledModelName DataSection(".NIVS.compiledmodelname") =
   "ctrl_student_hil";
-static char* NI_CompiledModelVersion = "1.97";
-static char* NI_CompiledModelDateTime = "Fri Feb 03 15:12:59 2017";
+static char* NI_CompiledModelVersion = "1.104";
+static char* NI_CompiledModelDateTime = "Mon Feb 06 10:28:37 2017";
 static char* NI_builder DataSection(".NIVS.builder") =
   "NI VeriStand 2014.0.0.82 (2014) RTW Build";
 static char* NI_BuilderVersion DataSection(".NIVS.builderversion") =

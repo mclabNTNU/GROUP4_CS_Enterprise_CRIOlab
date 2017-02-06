@@ -7,9 +7,9 @@
  *
  * Code generation for model "ctrl_student_HIL".
  *
- * Model version              : 1.85
+ * Model version              : 1.103
  * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
- * C source code generated on : Fri Feb 03 10:00:14 2017
+ * C source code generated on : Mon Feb 06 09:25:07 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -76,11 +76,53 @@ real_T rt_nrand_Upu32_Yd_f_pw_snf(uint32_T *u)
   return y;
 }
 
+real_T rt_atan2d_snf(real_T u0, real_T u1)
+{
+  real_T y;
+  int32_T u0_0;
+  int32_T u1_0;
+  if (rtIsNaN(u0) || rtIsNaN(u1)) {
+    y = (rtNaN);
+  } else if (rtIsInf(u0) && rtIsInf(u1)) {
+    if (u0 > 0.0) {
+      u0_0 = 1;
+    } else {
+      u0_0 = -1;
+    }
+
+    if (u1 > 0.0) {
+      u1_0 = 1;
+    } else {
+      u1_0 = -1;
+    }
+
+    y = atan2(u0_0, u1_0);
+  } else if (u1 == 0.0) {
+    if (u0 > 0.0) {
+      y = RT_PI / 2.0;
+    } else if (u0 < 0.0) {
+      y = -(RT_PI / 2.0);
+    } else {
+      y = 0.0;
+    }
+  } else {
+    y = atan2(u0, u1);
+  }
+
+  return y;
+}
+
 /* Model output function */
 static void ctrl_student_HIL_output(void)
 {
   real_T U_vsp;
-  real_T U_bt;
+  real_T u[3];
+  static const real_T a[9] = { 0.85836909871244638, -0.0, -0.0, -0.0,
+    0.39363079970541176, 0.20594146760867071, -0.0, -1.0158214185946111,
+    0.450145284390537 };
+
+  int32_T i;
+  real_T tmp;
 
   /* MATLAB Function: '<S5>/MATLAB Function' incorporates:
    *  Constant: '<S1>/Step size'
@@ -137,58 +179,78 @@ static void ctrl_student_HIL_output(void)
   /* End of MATLAB Function: '<S6>/MATLAB Function1' */
 
   /* MATLAB Function: '<S2>/MATLAB Function' */
-  /* MATLAB Function 'Simple Thrust Allocation/MATLAB Function': '<S13>:1' */
+  /* MATLAB Function 'Thrust Allocation/MATLAB Function': '<S13>:1' */
   /* Omega: Voith Scnheider rotational speed [rad/s] */
   /* '<S13>:1:4' */
   ctrl_student_HIL_B.omega = 0.3;
 
   /* U_vsp thrust angle */
-  /* '<S13>:1:6' */
-  ctrl_student_HIL_B.alpha = 0.0;
-
+  /* alpha = atan2(Y,X); ??? */
   /* Maximum forces, VS and BT */
   /*  [N] */
   /* Moment arm BT */
   /* [m] */
-  /* -1 -> 1 mapping, input to output */
-  /* '<S13>:1:16' */
-  U_vsp = ctrl_student_HIL_B.PosXRight / 1.165;
+  /* Moment arm vsp */
+  /* [m] */
+  /* T-matrix thrust allocation */
+  /* K-matrix, saturation limits for thrusters */
+  /* Setting the yaw moment into one variable */
+  /* '<S13>:1:27' */
+  /* Solving the thrust allocation relation for the decomposed thrust */
+  /* '<S13>:1:30' */
+  tmp = ctrl_student_HIL_B.R2_continuous - ctrl_student_HIL_B.L2_continuous;
+  for (i = 0; i < 3; i++) {
+    u[i] = a[i + 6] * tmp + (a[i + 3] * ctrl_student_HIL_B.PosXRight + a[i] *
+      ctrl_student_HIL_B.PosYRight);
+  }
 
-  /* '<S13>:1:17' */
-  U_bt = ctrl_student_HIL_B.PosYRight / 1.0187375;
+  /* Assigning the decomposed thrust */
+  /* '<S13>:1:33' */
+  /* '<S13>:1:34' */
+  /* '<S13>:1:35' */
+  tmp = u[2];
+
+  /* Calculating total VSP thrust */
+  /* '<S13>:1:38' */
+  U_vsp = sqrt(u[0] * u[0] + u[1] * u[1]);
+
+  /* Calculating thrust angle for VSP */
+  /* '<S13>:1:41' */
+  ctrl_student_HIL_B.alpha = rt_atan2d_snf(u[1], u[0]);
 
   /* Saturation U_vsp */
   if (fabs(U_vsp) > 1.0) {
-    /* '<S13>:1:20' */
-    /* '<S13>:1:21' */
+    /* '<S13>:1:44' */
+    /* '<S13>:1:45' */
     if (U_vsp < 0.0) {
-      U_vsp = -1.0;
-    } else if (U_vsp > 0.0) {
       U_vsp = 1.0;
+    } else if (U_vsp > 0.0) {
+      U_vsp = -1.0;
+    } else if (U_vsp == 0.0) {
+      U_vsp = -0.0;
     } else {
-      if (U_vsp == 0.0) {
-        U_vsp = 0.0;
-      }
+      U_vsp = -U_vsp;
     }
   }
 
-  /* Saturation U_vsp */
-  if (fabs(U_bt) > 1.0) {
-    /* '<S13>:1:25' */
-    /* '<S13>:1:26' */
-    if (U_bt < 0.0) {
-      U_bt = -1.0;
-    } else if (U_bt > 0.0) {
-      U_bt = 1.0;
+  /* Saturation U_bt */
+  if (fabs(u[2]) > 1.0) {
+    /* '<S13>:1:49' */
+    /* '<S13>:1:50' */
+    if (u[2] < 0.0) {
+      tmp = 1.0;
+    } else if (u[2] > 0.0) {
+      tmp = -1.0;
+    } else if (u[2] == 0.0) {
+      tmp = -0.0;
     } else {
-      if (U_bt == 0.0) {
-        U_bt = 0.0;
-      }
+      tmp = -u[2];
     }
   }
 
+  /* end of function */
   ctrl_student_HIL_B.U_vsp = U_vsp;
-  ctrl_student_HIL_B.U_bt = U_bt;
+  ctrl_student_HIL_B.U_bt = tmp;
 
   /* End of MATLAB Function: '<S2>/MATLAB Function' */
 }
@@ -845,49 +907,49 @@ void SetExternalOutputs(double* data, int* TaskSampleHit)
     index += 1;
   }
 
-  // Simple Thrust Allocation/u_VSP1: Virtual Signal # 0
+  // Thrust Allocation/u_VSP1: Virtual Signal # 0
   if (TaskSampleHit[0]) {              // sample and hold
     ni_extout[index++] = NIRT_GetValueByDataType(&ctrl_student_HIL_B.U_vsp,0,0,0);
   } else {
     index += 1;
   }
 
-  // Simple Thrust Allocation/alpha_VSP2: Virtual Signal # 0
+  // Thrust Allocation/alpha_VSP2: Virtual Signal # 0
   if (TaskSampleHit[0]) {              // sample and hold
     ni_extout[index++] = NIRT_GetValueByDataType(&ctrl_student_HIL_B.alpha,0,0,0);
   } else {
     index += 1;
   }
 
-  // Simple Thrust Allocation/alpha_VSP1: Virtual Signal # 0
+  // Thrust Allocation/alpha_VSP1: Virtual Signal # 0
   if (TaskSampleHit[0]) {              // sample and hold
     ni_extout[index++] = NIRT_GetValueByDataType(&ctrl_student_HIL_B.alpha,0,0,0);
   } else {
     index += 1;
   }
 
-  // Simple Thrust Allocation/u_VSP2: Virtual Signal # 0
+  // Thrust Allocation/u_VSP2: Virtual Signal # 0
   if (TaskSampleHit[0]) {              // sample and hold
     ni_extout[index++] = NIRT_GetValueByDataType(&ctrl_student_HIL_B.U_vsp,0,0,0);
   } else {
     index += 1;
   }
 
-  // Simple Thrust Allocation/u_BT: Virtual Signal # 0
+  // Thrust Allocation/u_BT: Virtual Signal # 0
   if (TaskSampleHit[0]) {              // sample and hold
     ni_extout[index++] = NIRT_GetValueByDataType(&ctrl_student_HIL_B.U_bt,0,0,0);
   } else {
     index += 1;
   }
 
-  // Simple Thrust Allocation/omega_VSP1: Virtual Signal # 0
+  // Thrust Allocation/omega_VSP1: Virtual Signal # 0
   if (TaskSampleHit[0]) {              // sample and hold
     ni_extout[index++] = NIRT_GetValueByDataType(&ctrl_student_HIL_B.omega,0,0,0);
   } else {
     index += 1;
   }
 
-  // Simple Thrust Allocation/omega_VSP2: Virtual Signal # 0
+  // Thrust Allocation/omega_VSP2: Virtual Signal # 0
   if (TaskSampleHit[0]) {              // sample and hold
     ni_extout[index++] = NIRT_GetValueByDataType(&ctrl_student_HIL_B.omega,0,0,0);
   } else {
@@ -935,25 +997,25 @@ int NI_InitExternalOutputs()
   ni_extout[index++] = NIRT_GetValueByDataType((real_T*)&ctrl_student_HIL_RGND,0,
     0,0);
 
-  // Simple Thrust Allocation/u_VSP1: Virtual Signal # 0
+  // Thrust Allocation/u_VSP1: Virtual Signal # 0
   ni_extout[index++] = NIRT_GetValueByDataType(&ctrl_student_HIL_B.U_vsp,0,0,0);
 
-  // Simple Thrust Allocation/alpha_VSP2: Virtual Signal # 0
+  // Thrust Allocation/alpha_VSP2: Virtual Signal # 0
   ni_extout[index++] = NIRT_GetValueByDataType(&ctrl_student_HIL_B.alpha,0,0,0);
 
-  // Simple Thrust Allocation/alpha_VSP1: Virtual Signal # 0
+  // Thrust Allocation/alpha_VSP1: Virtual Signal # 0
   ni_extout[index++] = NIRT_GetValueByDataType(&ctrl_student_HIL_B.alpha,0,0,0);
 
-  // Simple Thrust Allocation/u_VSP2: Virtual Signal # 0
+  // Thrust Allocation/u_VSP2: Virtual Signal # 0
   ni_extout[index++] = NIRT_GetValueByDataType(&ctrl_student_HIL_B.U_vsp,0,0,0);
 
-  // Simple Thrust Allocation/u_BT: Virtual Signal # 0
+  // Thrust Allocation/u_BT: Virtual Signal # 0
   ni_extout[index++] = NIRT_GetValueByDataType(&ctrl_student_HIL_B.U_bt,0,0,0);
 
-  // Simple Thrust Allocation/omega_VSP1: Virtual Signal # 0
+  // Thrust Allocation/omega_VSP1: Virtual Signal # 0
   ni_extout[index++] = NIRT_GetValueByDataType(&ctrl_student_HIL_B.omega,0,0,0);
 
-  // Simple Thrust Allocation/omega_VSP2: Virtual Signal # 0
+  // Thrust Allocation/omega_VSP2: Virtual Signal # 0
   ni_extout[index++] = NIRT_GetValueByDataType(&ctrl_student_HIL_B.omega,0,0,0);
   return NI_OK;
 }
@@ -1105,19 +1167,19 @@ static NI_Signal NI_SigList[] DataSection(".NIVS.siglist") =
     (B_ctrl_student_HIL_T, ArrowRight)+0*sizeof(real_T), BLOCKIO_SIG, 0, 1, 2,
     34, 0 },
 
-  { 18, "ctrl_student_hil/Simple Thrust Allocation/MATLAB Function", 0, "U_vsp",
+  { 18, "ctrl_student_hil/Thrust Allocation/MATLAB Function", 0, "U_vsp",
     offsetof(B_ctrl_student_HIL_T, U_vsp)+0*sizeof(real_T), BLOCKIO_SIG, 0, 1, 2,
     36, 0 },
 
-  { 19, "ctrl_student_hil/Simple Thrust Allocation/MATLAB Function", 1, "U_bt",
+  { 19, "ctrl_student_hil/Thrust Allocation/MATLAB Function", 1, "U_bt",
     offsetof(B_ctrl_student_HIL_T, U_bt)+0*sizeof(real_T), BLOCKIO_SIG, 0, 1, 2,
     38, 0 },
 
-  { 20, "ctrl_student_hil/Simple Thrust Allocation/MATLAB Function", 2, "alpha",
+  { 20, "ctrl_student_hil/Thrust Allocation/MATLAB Function", 2, "alpha",
     offsetof(B_ctrl_student_HIL_T, alpha)+0*sizeof(real_T), BLOCKIO_SIG, 0, 1, 2,
     40, 0 },
 
-  { 21, "ctrl_student_hil/Simple Thrust Allocation/MATLAB Function", 3, "omega",
+  { 21, "ctrl_student_hil/Thrust Allocation/MATLAB Function", 3, "omega",
     offsetof(B_ctrl_student_HIL_T, omega)+0*sizeof(real_T), BLOCKIO_SIG, 0, 1, 2,
     42, 0 },
 
@@ -1205,19 +1267,19 @@ static NI_ExternalIO NI_ExtList[] DataSection(".NIVS.extlist") =
   { 6, "tau to CSE mocell (only use for HIL testing)/integrator reset model", 0,
     EXT_OUT, 1, 1, 1 },
 
-  { 7, "Simple Thrust Allocation/u_VSP1", 0, EXT_OUT, 1, 1, 1 },
+  { 7, "Thrust Allocation/u_VSP1", 0, EXT_OUT, 1, 1, 1 },
 
-  { 8, "Simple Thrust Allocation/alpha_VSP2", 0, EXT_OUT, 1, 1, 1 },
+  { 8, "Thrust Allocation/alpha_VSP2", 0, EXT_OUT, 1, 1, 1 },
 
-  { 9, "Simple Thrust Allocation/alpha_VSP1", 0, EXT_OUT, 1, 1, 1 },
+  { 9, "Thrust Allocation/alpha_VSP1", 0, EXT_OUT, 1, 1, 1 },
 
-  { 10, "Simple Thrust Allocation/u_VSP2", 0, EXT_OUT, 1, 1, 1 },
+  { 10, "Thrust Allocation/u_VSP2", 0, EXT_OUT, 1, 1, 1 },
 
-  { 11, "Simple Thrust Allocation/u_BT", 0, EXT_OUT, 1, 1, 1 },
+  { 11, "Thrust Allocation/u_BT", 0, EXT_OUT, 1, 1, 1 },
 
-  { 12, "Simple Thrust Allocation/omega_VSP1", 0, EXT_OUT, 1, 1, 1 },
+  { 12, "Thrust Allocation/omega_VSP1", 0, EXT_OUT, 1, 1, 1 },
 
-  { 13, "Simple Thrust Allocation/omega_VSP2", 0, EXT_OUT, 1, 1, 1 },
+  { 13, "Thrust Allocation/omega_VSP2", 0, EXT_OUT, 1, 1, 1 },
 
   { -1, "", 0, 0, 0, 0, 0 }
 };
@@ -1235,8 +1297,8 @@ NI_Task NI_TaskList[] DataSection(".NIVS.tasklist") =
 int NI_NumTasks DataSection(".NIVS.numtasks") = 1;
 static char* NI_CompiledModelName DataSection(".NIVS.compiledmodelname") =
   "ctrl_student_hil";
-static char* NI_CompiledModelVersion = "1.85";
-static char* NI_CompiledModelDateTime = "Fri Feb 03 10:00:14 2017";
+static char* NI_CompiledModelVersion = "1.103";
+static char* NI_CompiledModelDateTime = "Mon Feb 06 09:25:07 2017";
 static char* NI_builder DataSection(".NIVS.builder") =
   "NI VeriStand 2014.0.0.82 (2014) RTW Build";
 static char* NI_BuilderVersion DataSection(".NIVS.builderversion") =

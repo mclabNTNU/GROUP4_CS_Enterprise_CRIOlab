@@ -7,9 +7,9 @@
  *
  * Code generation for model "ctrl_student_HIL".
  *
- * Model version              : 1.85
+ * Model version              : 1.103
  * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
- * C source code generated on : Fri Feb 03 10:00:14 2017
+ * C source code generated on : Mon Feb 06 09:25:07 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -1694,7 +1694,7 @@ extern RT_MODEL_ctrl_student_HIL_T *const ctrl_student_HIL_M;
  *
  * '<Root>' : 'ctrl_student_HIL'
  * '<S1>'   : 'ctrl_student_HIL/Noise generator'
- * '<S2>'   : 'ctrl_student_HIL/Simple Thrust Allocation'
+ * '<S2>'   : 'ctrl_student_HIL/Thrust Allocation'
  * '<S3>'   : 'ctrl_student_HIL/joystick'
  * '<S4>'   : 'ctrl_student_HIL/tau to CSE mocell (only use for HIL testing)'
  * '<S5>'   : 'ctrl_student_HIL/Noise generator/Downsample	signal'
@@ -1705,7 +1705,7 @@ extern RT_MODEL_ctrl_student_HIL_T *const ctrl_student_HIL_M;
  * '<S10>'  : 'ctrl_student_HIL/Noise generator/noise generator/Band-limited white noise psi'
  * '<S11>'  : 'ctrl_student_HIL/Noise generator/noise generator/Band-limited white noise x'
  * '<S12>'  : 'ctrl_student_HIL/Noise generator/noise generator/Band-limited white noise y'
- * '<S13>'  : 'ctrl_student_HIL/Simple Thrust Allocation/MATLAB Function'
+ * '<S13>'  : 'ctrl_student_HIL/Thrust Allocation/MATLAB Function'
  */
 #endif                                 /* RTW_HEADER_ctrl_student_HIL_h_ */
 
