@@ -56,7 +56,7 @@ BUILD_SUCCESS	= ... Created
 CPU             = PPC603
 
 MODEL           		:= ctrl_student_HIL
-MODULES         		:= NIVeriStand_main.c ctrl_student_HIL_data.c rtGetInf.c rtGetNaN.c rt_logging.c rt_nonfinite.c 
+MODULES         		:= NIVeriStand_main.c ctrl_student_HIL_data.c rtGetInf.c rtGetNaN.c rt_logging.c rt_nonfinite.c rt_zcfcn.c 
 MAKEFILE        		:= ctrl_student_HIL.mk
 MATLAB_ROOT     		:= C:\Program Files\MATLAB\R2015a
 ALT_MATLAB_ROOT 		:= C:\PROGRA~1\MATLAB\R2015a
