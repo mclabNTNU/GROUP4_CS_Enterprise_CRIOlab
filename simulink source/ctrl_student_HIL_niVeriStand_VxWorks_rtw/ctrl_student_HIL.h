@@ -7,9 +7,9 @@
  *
  * Code generation for model "ctrl_student_HIL".
  *
- * Model version              : 1.195
+ * Model version              : 1.196
  * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
- * C source code generated on : Sun Mar 12 16:35:39 2017
+ * C source code generated on : Mon Mar 13 11:06:14 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -844,7 +844,7 @@ typedef struct {
   real_T L2_22;                        /* '<S2>/L2_22' */
   real_T MatrixMultiply1[3];           /* '<S20>/Matrix Multiply1' */
   real_T MatrixMultiply4[3];           /* '<S4>/Matrix Multiply4' */
-  real_T Sum4[3];                      /* '<S4>/Sum4' */
+  real_T Sum1[3];                      /* '<S4>/Sum1' */
   real_T L2_continuous;                /* '<S6>/L2_continuous' */
   real_T PosXRight;                    /* '<S6>/PosXRight' */
   real_T PosYRight;                    /* '<S6>/PosYRight' */
@@ -880,6 +880,7 @@ typedef struct {
   real_T eta_hat_y_DWORK1;             /* '<Root>/eta_hat_y' */
   real_T u_in_DWORK1;                  /* '<Root>/u_in' */
   real_T eta_hat_psi_DWORK1;           /* '<Root>/eta_hat_psi' */
+  real_T v_in_DWORK1;                  /* '<Root>/v_in' */
   real_T X_d_DWORK1;                   /* '<S8>/X_d' */
   real_T N_d_DWORK1;                   /* '<S8>/N_d' */
   real_T Y_d_DWORK1;                   /* '<S8>/Y_d' */
@@ -887,7 +888,6 @@ typedef struct {
   real_T x_0_DWORK1;                   /* '<S8>/x_0' */
   real_T y_0_DWORK1;                   /* '<S8>/y_0' */
   real_T integratorresetmodel_DWORK1;  /* '<S8>/integrator reset model' */
-  real_T v_in_DWORK1;                  /* '<Root>/v_in' */
   real_T L1_11_DWORK1;                 /* '<S2>/L1_11' */
   real_T L3_11_DWORK1;                 /* '<S2>/L3_11' */
   real_T L3_22_DWORK1;                 /* '<S2>/L3_22' */
@@ -917,10 +917,6 @@ typedef struct {
     int_T IcNeedsLoading;
   } Integrator2_IWORK;                 /* '<S4>/Integrator2' */
 
-  struct {
-    int_T IcNeedsLoading;
-  } Integrator1_IWORK;                 /* '<S4>/Integrator1' */
-
   uint8_T y_in_DWORK2[17];             /* '<Root>/y_in' */
   uint8_T SystemReset_DWORK2[17];      /* '<Root>/System Reset' */
   uint8_T x_in_DWORK2[17];             /* '<Root>/x_in' */
@@ -933,6 +929,7 @@ typedef struct {
   uint8_T eta_hat_y_DWORK2[17];        /* '<Root>/eta_hat_y' */
   uint8_T u_in_DWORK2[17];             /* '<Root>/u_in' */
   uint8_T eta_hat_psi_DWORK2[17];      /* '<Root>/eta_hat_psi' */
+  uint8_T v_in_DWORK2[17];             /* '<Root>/v_in' */
   uint8_T X_d_DWORK2[17];              /* '<S8>/X_d' */
   uint8_T N_d_DWORK2[17];              /* '<S8>/N_d' */
   uint8_T Y_d_DWORK2[17];              /* '<S8>/Y_d' */
@@ -940,7 +937,6 @@ typedef struct {
   uint8_T x_0_DWORK2[17];              /* '<S8>/x_0' */
   uint8_T y_0_DWORK2[17];              /* '<S8>/y_0' */
   uint8_T integratorresetmodel_DWORK2[17];/* '<S8>/integrator reset model' */
-  uint8_T v_in_DWORK2[17];             /* '<Root>/v_in' */
   uint8_T L1_11_DWORK2[17];            /* '<S2>/L1_11' */
   uint8_T L3_11_DWORK2[17];            /* '<S2>/L3_11' */
   uint8_T L3_22_DWORK2[17];            /* '<S2>/L3_22' */
@@ -1286,6 +1282,24 @@ struct P_ctrl_student_HIL_T_ {
   real_T eta_hat_psi_P6;               /* Expression: btype
                                         * Referenced by: '<Root>/eta_hat_psi'
                                         */
+  real_T v_in_P1;                      /* Expression: width
+                                        * Referenced by: '<Root>/v_in'
+                                        */
+  real_T v_in_P2;                      /* Expression: dtype
+                                        * Referenced by: '<Root>/v_in'
+                                        */
+  real_T v_in_P3;                      /* Expression: portnum
+                                        * Referenced by: '<Root>/v_in'
+                                        */
+  real_T v_in_P4;                      /* Expression: stime
+                                        * Referenced by: '<Root>/v_in'
+                                        */
+  real_T v_in_P5;                      /* Expression: stype
+                                        * Referenced by: '<Root>/v_in'
+                                        */
+  real_T v_in_P6;                      /* Expression: btype
+                                        * Referenced by: '<Root>/v_in'
+                                        */
   real_T Constant5_Value;              /* Expression: 1
                                         * Referenced by: '<Root>/Constant5'
                                         */
@@ -1430,23 +1444,8 @@ struct P_ctrl_student_HIL_T_ {
   real_T integratorresetmodel_P6;      /* Expression: btype
                                         * Referenced by: '<S8>/integrator reset model'
                                         */
-  real_T v_in_P1;                      /* Expression: width
-                                        * Referenced by: '<Root>/v_in'
-                                        */
-  real_T v_in_P2;                      /* Expression: dtype
-                                        * Referenced by: '<Root>/v_in'
-                                        */
-  real_T v_in_P3;                      /* Expression: portnum
-                                        * Referenced by: '<Root>/v_in'
-                                        */
-  real_T v_in_P4;                      /* Expression: stime
-                                        * Referenced by: '<Root>/v_in'
-                                        */
-  real_T v_in_P5;                      /* Expression: stype
-                                        * Referenced by: '<Root>/v_in'
-                                        */
-  real_T v_in_P6;                      /* Expression: btype
-                                        * Referenced by: '<Root>/v_in'
+  real_T Integrator1_IC[3];            /* Expression: [0;0;0]
+                                        * Referenced by: '<S4>/Integrator1'
                                         */
   real_T Integrator_IC;                /* Expression: 0
                                         * Referenced by: '<S20>/Integrator'
@@ -1958,9 +1957,6 @@ extern X_ctrl_student_HIL_T ctrl_student_HIL_X;
 
 /* Block states (auto storage) */
 extern DW_ctrl_student_HIL_T ctrl_student_HIL_DW;
-
-/* External data declarations for dependent source files */
-extern const real_T ctrl_student_HIL_RGND;/* real_T ground */
 
 /* Model entry point functions */
 extern void ctrl_student_HIL_initialize(void);

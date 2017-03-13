@@ -33,9 +33,9 @@
 <signal> id = "32" name = "ctrl_student_hil/Observer/Matrix Multiply4" SignalName ="(1,1)" PortNum ="1" width = "1" datatype = "real_T"</signal>
 <signal> id = "33" name = "ctrl_student_hil/Observer/Matrix Multiply4" SignalName ="(1,2)" PortNum ="1" width = "1" datatype = "real_T"</signal>
 <signal> id = "34" name = "ctrl_student_hil/Observer/Matrix Multiply4" SignalName ="(1,3)" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "35" name = "ctrl_student_hil/Observer/Sum4" SignalName ="(1,1)" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "36" name = "ctrl_student_hil/Observer/Sum4" SignalName ="(1,2)" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "37" name = "ctrl_student_hil/Observer/Sum4" SignalName ="(1,3)" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "35" name = "ctrl_student_hil/Observer/Sum1" SignalName ="(1,1)" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "36" name = "ctrl_student_hil/Observer/Sum1" SignalName ="(1,2)" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "37" name = "ctrl_student_hil/Observer/Sum1" SignalName ="(1,3)" PortNum ="1" width = "1" datatype = "real_T"</signal>
 <signal> id = "38" name = "ctrl_student_hil/joystick/L2_continuous" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
 <signal> id = "39" name = "ctrl_student_hil/joystick/PosXRight" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
 <signal> id = "40" name = "ctrl_student_hil/joystick/PosYRight" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>

@@ -7,9 +7,9 @@
  *
  * Code generation for model "ctrl_student_HIL".
  *
- * Model version              : 1.195
+ * Model version              : 1.196
  * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
- * C source code generated on : Sun Mar 12 16:35:39 2017
+ * C source code generated on : Mon Mar 13 11:06:14 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -20,8 +20,6 @@
 
 #include "ctrl_student_HIL.h"
 #include "ctrl_student_HIL_private.h"
-
-const real_T ctrl_student_HIL_RGND = 0.0;/* real_T ground */
 
 /* Block signals (auto storage) */
 B_ctrl_student_HIL_T ctrl_student_HIL_B;
@@ -405,6 +403,12 @@ void ctrl_student_HIL_output(void)
   if (rtmIsMajorTimeStep(ctrl_student_HIL_M)) {
   }
 
+  if (rtmIsMajorTimeStep(ctrl_student_HIL_M)) {
+  }
+
+  if (rtmIsMajorTimeStep(ctrl_student_HIL_M)) {
+  }
+
   /* Integrator: '<S4>/Integrator1' */
   if (rtmIsMajorTimeStep(ctrl_student_HIL_M)) {
     ZCEventType zcEvent;
@@ -413,10 +417,13 @@ void ctrl_student_HIL_output(void)
                        ctrl_student_HIL_B.SystemReset);
 
     /* evaluate zero-crossings */
-    if (zcEvent || ctrl_student_HIL_DW.Integrator1_IWORK.IcNeedsLoading) {
-      ctrl_student_HIL_X.Integrator1_CSTATE[0] = ctrl_student_HIL_B.u_in;
-      ctrl_student_HIL_X.Integrator1_CSTATE[1] = ctrl_student_HIL_B.v_in;
-      ctrl_student_HIL_X.Integrator1_CSTATE[2] = ctrl_student_HIL_B.r_in;
+    if (zcEvent) {
+      ctrl_student_HIL_X.Integrator1_CSTATE[0] =
+        (ctrl_student_HIL_P.Integrator1_IC[0]);
+      ctrl_student_HIL_X.Integrator1_CSTATE[1] =
+        (ctrl_student_HIL_P.Integrator1_IC[1]);
+      ctrl_student_HIL_X.Integrator1_CSTATE[2] =
+        (ctrl_student_HIL_P.Integrator1_IC[2]);
     }
   }
 
@@ -670,15 +677,15 @@ void ctrl_student_HIL_output(void)
       [2];
   }
 
-  /* Sum: '<S4>/Sum4' incorporates:
+  /* Sum: '<S4>/Sum1' incorporates:
    *  Product: '<S4>/Matrix Multiply6'
    */
   for (i = 0; i < 3; i++) {
-    ctrl_student_HIL_B.Sum4[i] = ((rtb_R[i + 3] * rtb_Integrator1[1] + rtb_R[i] *
+    ctrl_student_HIL_B.Sum1[i] = ((rtb_R[i + 3] * rtb_Integrator1[1] + rtb_R[i] *
       rtb_Integrator1[0]) + rtb_R[i + 6] * rtb_Integrator1[2]) + rtb_Switch[i];
   }
 
-  /* End of Sum: '<S4>/Sum4' */
+  /* End of Sum: '<S4>/Sum1' */
   /* MATLAB Function 'op_space': '<S7>:1' */
   /* parameters */
   /* '<S7>:1:4' */
@@ -720,8 +727,6 @@ void ctrl_student_HIL_update(void)
     ctrl_student_HIL_DW.Hold_PreviousInput[2] = ctrl_student_HIL_B.output[2];
   }
 
-  /* Update for Integrator: '<S4>/Integrator1' */
-  ctrl_student_HIL_DW.Integrator1_IWORK.IcNeedsLoading = 0;
   if (rtmIsMajorTimeStep(ctrl_student_HIL_M)) {
     rt_ertODEUpdateContinuousStates(&ctrl_student_HIL_M->solverInfo);
   }
@@ -772,11 +777,11 @@ void ctrl_student_HIL_derivatives(void)
   /* Derivatives for Integrator: '<S4>/Integrator2' */
   {
     ((XDot_ctrl_student_HIL_T *) ctrl_student_HIL_M->ModelData.derivs)
-      ->Integrator2_CSTATE[0] = ctrl_student_HIL_B.Sum4[0];
+      ->Integrator2_CSTATE[0] = ctrl_student_HIL_B.Sum1[0];
     ((XDot_ctrl_student_HIL_T *) ctrl_student_HIL_M->ModelData.derivs)
-      ->Integrator2_CSTATE[1] = ctrl_student_HIL_B.Sum4[1];
+      ->Integrator2_CSTATE[1] = ctrl_student_HIL_B.Sum1[1];
     ((XDot_ctrl_student_HIL_T *) ctrl_student_HIL_M->ModelData.derivs)
-      ->Integrator2_CSTATE[2] = ctrl_student_HIL_B.Sum4[2];
+      ->Integrator2_CSTATE[2] = ctrl_student_HIL_B.Sum1[2];
   }
 
   /* Derivatives for Integrator: '<S4>/Integrator1' */
@@ -906,13 +911,12 @@ void ctrl_student_HIL_initialize(void)
     ctrl_student_HIL_DW.Hold_PreviousInput[2] = ctrl_student_HIL_P.Hold_X0;
 
     /* InitializeConditions for Integrator: '<S4>/Integrator1' */
-    if (rtmIsFirstInitCond(ctrl_student_HIL_M)) {
-      ctrl_student_HIL_X.Integrator1_CSTATE[0] = 0.0;
-      ctrl_student_HIL_X.Integrator1_CSTATE[1] = 0.0;
-      ctrl_student_HIL_X.Integrator1_CSTATE[2] = 0.0;
-    }
-
-    ctrl_student_HIL_DW.Integrator1_IWORK.IcNeedsLoading = 1;
+    ctrl_student_HIL_X.Integrator1_CSTATE[0] =
+      (ctrl_student_HIL_P.Integrator1_IC[0]);
+    ctrl_student_HIL_X.Integrator1_CSTATE[1] =
+      (ctrl_student_HIL_P.Integrator1_IC[1]);
+    ctrl_student_HIL_X.Integrator1_CSTATE[2] =
+      (ctrl_student_HIL_P.Integrator1_IC[2]);
 
     /* InitializeConditions for Integrator: '<S20>/Integrator' */
     ctrl_student_HIL_X.Integrator_CSTATE[0] = ctrl_student_HIL_P.Integrator_IC;
@@ -1129,7 +1133,7 @@ RT_MODEL_ctrl_student_HIL_T *ctrl_student_HIL(void)
   ctrl_student_HIL_M->Sizes.numSampTimes = (2);/* Number of sample times */
   ctrl_student_HIL_M->Sizes.numBlocks = (99);/* Number of blocks */
   ctrl_student_HIL_M->Sizes.numBlockIO = (39);/* Number of block outputs */
-  ctrl_student_HIL_M->Sizes.numBlockPrms = (270);/* Sum of parameter "widths" */
+  ctrl_student_HIL_M->Sizes.numBlockPrms = (273);/* Sum of parameter "widths" */
   return ctrl_student_HIL_M;
 }
 
@@ -1212,12 +1216,15 @@ double NIRT_GetValueByDataType(void* ptr,int subindex, int type, int Complex)
     return NIRT_GetValueByDataType(ptr,subindex,0,Complex);
 
    case 22:
-    return NIRT_GetValueByDataType(ptr,subindex,8,Complex);
-
-   case 31:
     return NIRT_GetValueByDataType(ptr,subindex,0,Complex);
 
+   case 23:
+    return NIRT_GetValueByDataType(ptr,subindex,8,Complex);
+
    case 32:
+    return NIRT_GetValueByDataType(ptr,subindex,0,Complex);
+
+   case 33:
     return NIRT_GetValueByDataType(ptr,subindex,0,Complex);
   }
 
@@ -1305,13 +1312,17 @@ long NIRT_SetValueByDataType(void* ptr,int subindex, double value, int type, int
 
    case 22:
     //Type is matrix. Call SetValueByDataType on its contained type
+    return NIRT_SetValueByDataType(ptr,subindex,value,0,Complex);
+
+   case 23:
+    //Type is matrix. Call SetValueByDataType on its contained type
     return NIRT_SetValueByDataType(ptr,subindex,value,8,Complex);
 
-   case 31:
+   case 32:
     //Type is matrix. Call SetValueByDataType on its contained type
     return NIRT_SetValueByDataType(ptr,subindex,value,0,Complex);
 
-   case 32:
+   case 33:
     //Type is matrix. Call SetValueByDataType on its contained type
     return NIRT_SetValueByDataType(ptr,subindex,value,0,Complex);
   }
@@ -1356,21 +1367,21 @@ void SetExternalInputs(double* data, int* TaskSampleHit)
   }
 
   // r_in
-  if (TaskSampleHit[0]) {
+  if (TaskSampleHit[1]) {
     NIRT_SetValueByDataType(&ctrl_student_HIL_B.r_in, 0, data[index++], 0, 0);
   } else {
     index += 1;
   }
 
   // u_in
-  if (TaskSampleHit[0]) {
+  if (TaskSampleHit[1]) {
     NIRT_SetValueByDataType(&ctrl_student_HIL_B.u_in, 0, data[index++], 0, 0);
   } else {
     index += 1;
   }
 
   // v_in
-  if (TaskSampleHit[0]) {
+  if (TaskSampleHit[1]) {
     NIRT_SetValueByDataType(&ctrl_student_HIL_B.v_in, 0, data[index++], 0, 0);
   } else {
     index += 1;
@@ -1635,8 +1646,8 @@ void SetExternalOutputs(double* data, int* TaskSampleHit)
   }
 
   // tau to CSE mocell (only use for HIL testing)/integrator reset model: Virtual Signal # 0
-  if (TaskSampleHit[1]) {              // sample and hold
-    ni_extout[index++] = NIRT_GetValueByDataType((real_T*)&ctrl_student_HIL_RGND,
+  if (TaskSampleHit[0]) {              // sample and hold
+    ni_extout[index++] = NIRT_GetValueByDataType(&ctrl_student_HIL_B.SystemReset,
       0,0,0);
   } else {
     index += 1;
@@ -1701,7 +1712,7 @@ int NI_InitExternalOutputs()
     (&ctrl_student_HIL_P.Constant1_Value_h,0,0,0);
 
   // tau to CSE mocell (only use for HIL testing)/integrator reset model: Virtual Signal # 0
-  ni_extout[index++] = NIRT_GetValueByDataType((real_T*)&ctrl_student_HIL_RGND,0,
+  ni_extout[index++] = NIRT_GetValueByDataType(&ctrl_student_HIL_B.SystemReset,0,
     0,0);
   return NI_OK;
 }
@@ -1710,88 +1721,91 @@ int NI_InitExternalOutputs()
 static NI_Parameter NI_ParamList[] DataSection(".NIVS.paramlist") =
 {
   { 0, "ctrl_student_hil/Noise generator/Step size/Value", offsetof
-    (P_ctrl_student_HIL_T, Stepsize_Value), 31, 1, 2, 0, 0 },
+    (P_ctrl_student_HIL_T, Stepsize_Value), 32, 1, 2, 0, 0 },
 
   { 1, "ctrl_student_hil/Noise generator/Downsamplesignal/counter/X0", offsetof
-    (P_ctrl_student_HIL_T, counter_X0), 31, 1, 2, 2, 0 },
+    (P_ctrl_student_HIL_T, counter_X0), 32, 1, 2, 2, 0 },
 
   { 2, "ctrl_student_hil/Constant4/Value", offsetof(P_ctrl_student_HIL_T,
-    Constant4_Value), 31, 1, 2, 4, 0 },
+    Constant4_Value), 32, 1, 2, 4, 0 },
 
   { 3, "ctrl_student_hil/Constant1/Value", offsetof(P_ctrl_student_HIL_T,
-    Constant1_Value), 31, 1, 2, 6, 0 },
+    Constant1_Value), 32, 1, 2, 6, 0 },
 
   { 4,
     "ctrl_student_hil/Noise generator/noise generator/Band-limited white noise x/White Noise/Mean",
-    offsetof(P_ctrl_student_HIL_T, WhiteNoise_Mean), 31, 1, 2, 8, 0 },
+    offsetof(P_ctrl_student_HIL_T, WhiteNoise_Mean), 32, 1, 2, 8, 0 },
 
   { 5,
     "ctrl_student_hil/Noise generator/noise generator/Band-limited white noise x/White Noise/StdDev",
-    offsetof(P_ctrl_student_HIL_T, WhiteNoise_StdDev), 31, 1, 2, 10, 0 },
+    offsetof(P_ctrl_student_HIL_T, WhiteNoise_StdDev), 32, 1, 2, 10, 0 },
 
   { 6,
     "ctrl_student_hil/Noise generator/noise generator/Band-limited white noise x/White Noise/Seed",
-    offsetof(P_ctrl_student_HIL_T, WhiteNoise_Seed), 31, 1, 2, 12, 0 },
+    offsetof(P_ctrl_student_HIL_T, WhiteNoise_Seed), 32, 1, 2, 12, 0 },
 
   { 7,
     "ctrl_student_hil/Noise generator/noise generator/Band-limited white noise y/White Noise/Mean",
-    offsetof(P_ctrl_student_HIL_T, WhiteNoise_Mean_h), 31, 1, 2, 14, 0 },
+    offsetof(P_ctrl_student_HIL_T, WhiteNoise_Mean_h), 32, 1, 2, 14, 0 },
 
   { 8,
     "ctrl_student_hil/Noise generator/noise generator/Band-limited white noise y/White Noise/StdDev",
-    offsetof(P_ctrl_student_HIL_T, WhiteNoise_StdDev_d), 31, 1, 2, 16, 0 },
+    offsetof(P_ctrl_student_HIL_T, WhiteNoise_StdDev_d), 32, 1, 2, 16, 0 },
 
   { 9,
     "ctrl_student_hil/Noise generator/noise generator/Band-limited white noise y/White Noise/Seed",
-    offsetof(P_ctrl_student_HIL_T, WhiteNoise_Seed_b), 31, 1, 2, 18, 0 },
+    offsetof(P_ctrl_student_HIL_T, WhiteNoise_Seed_b), 32, 1, 2, 18, 0 },
 
   { 10, "ctrl_student_hil/Constant3/Value", offsetof(P_ctrl_student_HIL_T,
-    Constant3_Value), 31, 1, 2, 20, 0 },
+    Constant3_Value), 32, 1, 2, 20, 0 },
 
   { 11,
     "ctrl_student_hil/Noise generator/noise generator/Band-limited white noise psi/White Noise/Mean",
-    offsetof(P_ctrl_student_HIL_T, WhiteNoise_Mean_f), 31, 1, 2, 22, 0 },
+    offsetof(P_ctrl_student_HIL_T, WhiteNoise_Mean_f), 32, 1, 2, 22, 0 },
 
   { 12,
     "ctrl_student_hil/Noise generator/noise generator/Band-limited white noise psi/White Noise/StdDev",
-    offsetof(P_ctrl_student_HIL_T, WhiteNoise_StdDev_g), 31, 1, 2, 24, 0 },
+    offsetof(P_ctrl_student_HIL_T, WhiteNoise_StdDev_g), 32, 1, 2, 24, 0 },
 
   { 13,
     "ctrl_student_hil/Noise generator/noise generator/Band-limited white noise psi/White Noise/Seed",
-    offsetof(P_ctrl_student_HIL_T, WhiteNoise_Seed_l), 31, 1, 2, 26, 0 },
+    offsetof(P_ctrl_student_HIL_T, WhiteNoise_Seed_l), 32, 1, 2, 26, 0 },
 
   { 14, "ctrl_student_hil/Noise generator/Sample & hold/Hold/X0", offsetof
-    (P_ctrl_student_HIL_T, Hold_X0), 31, 1, 2, 28, 0 },
+    (P_ctrl_student_HIL_T, Hold_X0), 32, 1, 2, 28, 0 },
 
   { 15, "ctrl_student_hil/Constant2/Value", offsetof(P_ctrl_student_HIL_T,
-    Constant2_Value), 31, 1, 2, 30, 0 },
+    Constant2_Value), 32, 1, 2, 30, 0 },
 
   { 16, "ctrl_student_hil/Constant5/Value", offsetof(P_ctrl_student_HIL_T,
-    Constant5_Value), 31, 1, 2, 32, 0 },
+    Constant5_Value), 32, 1, 2, 32, 0 },
 
   { 17, "ctrl_student_hil/Constant7/Value", offsetof(P_ctrl_student_HIL_T,
-    Constant7_Value), 31, 1, 2, 34, 0 },
+    Constant7_Value), 32, 1, 2, 34, 0 },
 
   { 18, "ctrl_student_hil/Constant6/Value", offsetof(P_ctrl_student_HIL_T,
-    Constant6_Value), 31, 1, 2, 36, 0 },
+    Constant6_Value), 32, 1, 2, 36, 0 },
 
   { 19,
     "ctrl_student_hil/tau to CSE mocell (only use for HIL testing)/Constant2/Value",
-    offsetof(P_ctrl_student_HIL_T, Constant2_Value_e), 31, 1, 2, 38, 0 },
+    offsetof(P_ctrl_student_HIL_T, Constant2_Value_e), 32, 1, 2, 38, 0 },
 
   { 20,
     "ctrl_student_hil/tau to CSE mocell (only use for HIL testing)/Constant/Value",
-    offsetof(P_ctrl_student_HIL_T, Constant_Value), 31, 1, 2, 40, 0 },
+    offsetof(P_ctrl_student_HIL_T, Constant_Value), 32, 1, 2, 40, 0 },
 
   { 21,
     "ctrl_student_hil/tau to CSE mocell (only use for HIL testing)/Constant1/Value",
-    offsetof(P_ctrl_student_HIL_T, Constant1_Value_h), 31, 1, 2, 42, 0 },
+    offsetof(P_ctrl_student_HIL_T, Constant1_Value_h), 32, 1, 2, 42, 0 },
 
-  { 22, "ctrl_student_hil/Observer/Bias estimator/Integrator/InitialCondition",
-    offsetof(P_ctrl_student_HIL_T, Integrator_IC), 31, 1, 2, 44, 0 },
+  { 22, "ctrl_student_hil/Observer/Integrator1/InitialCondition", offsetof
+    (P_ctrl_student_HIL_T, Integrator1_IC), 22, 3, 2, 44, 0 },
+
+  { 23, "ctrl_student_hil/Observer/Bias estimator/Integrator/InitialCondition",
+    offsetof(P_ctrl_student_HIL_T, Integrator_IC), 32, 1, 2, 46, 0 },
 };
 
-static int NI_ParamListSize DataSection(".NIVS.paramlistsize") = 23;
+static int NI_ParamListSize DataSection(".NIVS.paramlistsize") = 24;
 static int NI_ParamDimList[] DataSection(".NIVS.paramdimlist") =
 {
   1, 1,                                /* Parameter at index 0 */
@@ -1816,7 +1830,8 @@ static int NI_ParamDimList[] DataSection(".NIVS.paramdimlist") =
   1, 1,                                /* Parameter at index 19 */
   1, 1,                                /* Parameter at index 20 */
   1, 1,                                /* Parameter at index 21 */
-  1, 1,                                /* Parameter at index 22 */
+  3, 1,                                /* Parameter at index 22 */
+  1, 1,                                /* Parameter at index 23 */
 };
 
 static NI_Signal NI_SigList[] DataSection(".NIVS.siglist") =
@@ -1858,7 +1873,7 @@ static NI_Signal NI_SigList[] DataSection(".NIVS.siglist") =
   { 9,
     "ctrl_student_hil/Noise generator/noise generator/Band-limited white noise psi/Product",
     0, "", offsetof(B_ctrl_student_HIL_T, Product_e)+0*sizeof(real_T),
-    BLOCKIO_SIG, 31, 1, 2, 18, 0 },
+    BLOCKIO_SIG, 32, 1, 2, 18, 0 },
 
   { 10, "ctrl_student_hil/Noise generator/Sample & hold/Hold", 0, "(1,1)",
     offsetof(B_ctrl_student_HIL_T, Hold)+0*sizeof(real_T), BLOCKIO_SIG, 18, 1, 2,
@@ -1950,16 +1965,16 @@ static NI_Signal NI_SigList[] DataSection(".NIVS.siglist") =
     (B_ctrl_student_HIL_T, MatrixMultiply4)+2*sizeof(real_T), BLOCKIO_SIG, 18, 1,
     2, 66, 0 },
 
-  { 34, "ctrl_student_hil/Observer/Sum4", 0, "(1,1)", offsetof
-    (B_ctrl_student_HIL_T, Sum4)+0*sizeof(real_T), BLOCKIO_SIG, 18, 1, 2, 68, 0
+  { 34, "ctrl_student_hil/Observer/Sum1", 0, "(1,1)", offsetof
+    (B_ctrl_student_HIL_T, Sum1)+0*sizeof(real_T), BLOCKIO_SIG, 18, 1, 2, 68, 0
   },
 
-  { 35, "ctrl_student_hil/Observer/Sum4", 0, "(1,2)", offsetof
-    (B_ctrl_student_HIL_T, Sum4)+1*sizeof(real_T), BLOCKIO_SIG, 18, 1, 2, 70, 0
+  { 35, "ctrl_student_hil/Observer/Sum1", 0, "(1,2)", offsetof
+    (B_ctrl_student_HIL_T, Sum1)+1*sizeof(real_T), BLOCKIO_SIG, 18, 1, 2, 70, 0
   },
 
-  { 36, "ctrl_student_hil/Observer/Sum4", 0, "(1,3)", offsetof
-    (B_ctrl_student_HIL_T, Sum4)+2*sizeof(real_T), BLOCKIO_SIG, 18, 1, 2, 72, 0
+  { 36, "ctrl_student_hil/Observer/Sum1", 0, "(1,3)", offsetof
+    (B_ctrl_student_HIL_T, Sum1)+2*sizeof(real_T), BLOCKIO_SIG, 18, 1, 2, 72, 0
   },
 
   { 37, "ctrl_student_hil/joystick/L2_continuous", 0, "", offsetof
@@ -2050,11 +2065,11 @@ static NI_ExternalIO NI_ExtList[] DataSection(".NIVS.extlist") =
 
   { 3, "psi_in", 0, EXT_IN, 1, 1, 1 },
 
-  { 4, "r_in", 0, EXT_IN, 1, 1, 1 },
+  { 4, "r_in", 1, EXT_IN, 1, 1, 1 },
 
-  { 5, "u_in", 0, EXT_IN, 1, 1, 1 },
+  { 5, "u_in", 1, EXT_IN, 1, 1, 1 },
 
-  { 6, "v_in", 0, EXT_IN, 1, 1, 1 },
+  { 6, "v_in", 1, EXT_IN, 1, 1, 1 },
 
   { 7, "Gain Matrices/L1_11", 0, EXT_IN, 1, 1, 1 },
 
@@ -2125,7 +2140,7 @@ static NI_ExternalIO NI_ExtList[] DataSection(".NIVS.extlist") =
   { 11, "tau to CSE mocell (only use for HIL testing)/y_0", 1, EXT_OUT, 1, 1, 1
   },
 
-  { 12, "tau to CSE mocell (only use for HIL testing)/integrator reset model", 1,
+  { 12, "tau to CSE mocell (only use for HIL testing)/integrator reset model", 0,
     EXT_OUT, 1, 1, 1 },
 
   { -1, "", 0, 0, 0, 0, 0 }
@@ -2144,8 +2159,8 @@ NI_Task NI_TaskList[] DataSection(".NIVS.tasklist") =
 int NI_NumTasks DataSection(".NIVS.numtasks") = 1;
 static char* NI_CompiledModelName DataSection(".NIVS.compiledmodelname") =
   "ctrl_student_hil";
-static char* NI_CompiledModelVersion = "1.195";
-static char* NI_CompiledModelDateTime = "Sun Mar 12 16:35:39 2017";
+static char* NI_CompiledModelVersion = "1.196";
+static char* NI_CompiledModelDateTime = "Mon Mar 13 11:06:14 2017";
 static char* NI_builder DataSection(".NIVS.builder") =
   "NI VeriStand 2014.0.0.82 (2014) RTW Build";
 static char* NI_BuilderVersion DataSection(".NIVS.builderversion") =
@@ -2707,7 +2722,7 @@ DLL_EXPORT long NIRT_GetSimState(long* numContStates, char* contStatesNames,
   if (numContStates && numDiscStates && numClockTicks) {
     if (*numContStates < 0 || *numDiscStates < 0 || *numClockTicks < 0) {
       *numContStates = 9;
-      *numDiscStates = 828;
+      *numDiscStates = 827;
       *numClockTicks = NUMST - TID01EQ;
       return NI_OK;
     }
@@ -2814,6 +2829,9 @@ DLL_EXPORT long NIRT_GetSimState(long* numContStates, char* contStatesNames,
       (&ctrl_student_HIL_DW.eta_hat_psi_DWORK1, 0, 0, 0);
     strcpy(discStatesNames + (idx++ * 100),
            "&ctrl_student_HIL_DW.eta_hat_psi_DWORK1");
+    discStates[idx] = NIRT_GetValueByDataType(&ctrl_student_HIL_DW.v_in_DWORK1,
+      0, 0, 0);
+    strcpy(discStatesNames + (idx++ * 100), "&ctrl_student_HIL_DW.v_in_DWORK1");
     discStates[idx] = NIRT_GetValueByDataType(&ctrl_student_HIL_DW.X_d_DWORK1, 0,
       0, 0);
     strcpy(discStatesNames + (idx++ * 100), "&ctrl_student_HIL_DW.X_d_DWORK1");
@@ -2836,9 +2854,6 @@ DLL_EXPORT long NIRT_GetSimState(long* numContStates, char* contStatesNames,
       (&ctrl_student_HIL_DW.integratorresetmodel_DWORK1, 0, 0, 0);
     strcpy(discStatesNames + (idx++ * 100),
            "&ctrl_student_HIL_DW.integratorresetmodel_DWORK1");
-    discStates[idx] = NIRT_GetValueByDataType(&ctrl_student_HIL_DW.v_in_DWORK1,
-      0, 0, 0);
-    strcpy(discStatesNames + (idx++ * 100), "&ctrl_student_HIL_DW.v_in_DWORK1");
     discStates[idx] = NIRT_GetValueByDataType(&ctrl_student_HIL_DW.L1_11_DWORK1,
       0, 0, 0);
     strcpy(discStatesNames + (idx++ * 100), "&ctrl_student_HIL_DW.L1_11_DWORK1");
@@ -2929,10 +2944,6 @@ DLL_EXPORT long NIRT_GetSimState(long* numContStates, char* contStatesNames,
       (&ctrl_student_HIL_DW.Integrator2_IWORK.IcNeedsLoading, 0, 10, 0);
     strcpy(discStatesNames + (idx++ * 100),
            "&ctrl_student_HIL_DW.Integrator2_IWORK.IcNeedsLoading");
-    discStates[idx] = NIRT_GetValueByDataType
-      (&ctrl_student_HIL_DW.Integrator1_IWORK.IcNeedsLoading, 0, 10, 0);
-    strcpy(discStatesNames + (idx++ * 100),
-           "&ctrl_student_HIL_DW.Integrator1_IWORK.IcNeedsLoading");
     for (count = 0; count < 17; count++) {
       discStates[idx] = NIRT_GetValueByDataType(&ctrl_student_HIL_DW.y_in_DWORK2,
         count, 17, 0);
@@ -3014,6 +3025,12 @@ DLL_EXPORT long NIRT_GetSimState(long* numContStates, char* contStatesNames,
     }
 
     for (count = 0; count < 17; count++) {
+      discStates[idx] = NIRT_GetValueByDataType(&ctrl_student_HIL_DW.v_in_DWORK2,
+        count, 17, 0);
+      strcpy(discStatesNames + (idx++ * 100), "&ctrl_student_HIL_DW.v_in_DWORK2");
+    }
+
+    for (count = 0; count < 17; count++) {
       discStates[idx] = NIRT_GetValueByDataType(&ctrl_student_HIL_DW.X_d_DWORK2,
         count, 17, 0);
       strcpy(discStatesNames + (idx++ * 100), "&ctrl_student_HIL_DW.X_d_DWORK2");
@@ -3055,12 +3072,6 @@ DLL_EXPORT long NIRT_GetSimState(long* numContStates, char* contStatesNames,
         (&ctrl_student_HIL_DW.integratorresetmodel_DWORK2, count, 17, 0);
       strcpy(discStatesNames + (idx++ * 100),
              "&ctrl_student_HIL_DW.integratorresetmodel_DWORK2");
-    }
-
-    for (count = 0; count < 17; count++) {
-      discStates[idx] = NIRT_GetValueByDataType(&ctrl_student_HIL_DW.v_in_DWORK2,
-        count, 17, 0);
-      strcpy(discStatesNames + (idx++ * 100), "&ctrl_student_HIL_DW.v_in_DWORK2");
     }
 
     for (count = 0; count < 17; count++) {
@@ -3297,6 +3308,8 @@ DLL_EXPORT long NIRT_SetSimState(double* contStates, double* discStates, long
       ++], 0, 0);
     NIRT_SetValueByDataType(&ctrl_student_HIL_DW.eta_hat_psi_DWORK1, 0,
       discStates[idx++], 0, 0);
+    NIRT_SetValueByDataType(&ctrl_student_HIL_DW.v_in_DWORK1, 0, discStates[idx
+      ++], 0, 0);
     NIRT_SetValueByDataType(&ctrl_student_HIL_DW.X_d_DWORK1, 0, discStates[idx++],
       0, 0);
     NIRT_SetValueByDataType(&ctrl_student_HIL_DW.N_d_DWORK1, 0, discStates[idx++],
@@ -3311,8 +3324,6 @@ DLL_EXPORT long NIRT_SetSimState(double* contStates, double* discStates, long
       0, 0);
     NIRT_SetValueByDataType(&ctrl_student_HIL_DW.integratorresetmodel_DWORK1, 0,
       discStates[idx++], 0, 0);
-    NIRT_SetValueByDataType(&ctrl_student_HIL_DW.v_in_DWORK1, 0, discStates[idx
-      ++], 0, 0);
     NIRT_SetValueByDataType(&ctrl_student_HIL_DW.L1_11_DWORK1, 0, discStates[idx
       ++], 0, 0);
     NIRT_SetValueByDataType(&ctrl_student_HIL_DW.L3_11_DWORK1, 0, discStates[idx
@@ -3365,9 +3376,6 @@ DLL_EXPORT long NIRT_SetSimState(double* contStates, double* discStates, long
       7, 0);
     NIRT_SetValueByDataType
       (&ctrl_student_HIL_DW.Integrator2_IWORK.IcNeedsLoading, 0, discStates[idx
-       ++], 10, 0);
-    NIRT_SetValueByDataType
-      (&ctrl_student_HIL_DW.Integrator1_IWORK.IcNeedsLoading, 0, discStates[idx
        ++], 10, 0);
     for (count = 0; count < 17; count++) {
       NIRT_SetValueByDataType(&ctrl_student_HIL_DW.y_in_DWORK2, count,
@@ -3430,6 +3438,11 @@ DLL_EXPORT long NIRT_SetSimState(double* contStates, double* discStates, long
     }
 
     for (count = 0; count < 17; count++) {
+      NIRT_SetValueByDataType(&ctrl_student_HIL_DW.v_in_DWORK2, count,
+        discStates[idx++], 17, 0);
+    }
+
+    for (count = 0; count < 17; count++) {
       NIRT_SetValueByDataType(&ctrl_student_HIL_DW.X_d_DWORK2, count,
         discStates[idx++], 17, 0);
     }
@@ -3462,11 +3475,6 @@ DLL_EXPORT long NIRT_SetSimState(double* contStates, double* discStates, long
     for (count = 0; count < 17; count++) {
       NIRT_SetValueByDataType(&ctrl_student_HIL_DW.integratorresetmodel_DWORK2,
         count, discStates[idx++], 17, 0);
-    }
-
-    for (count = 0; count < 17; count++) {
-      NIRT_SetValueByDataType(&ctrl_student_HIL_DW.v_in_DWORK2, count,
-        discStates[idx++], 17, 0);
     }
 
     for (count = 0; count < 17; count++) {
