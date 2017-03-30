@@ -8,18 +8,6 @@
 <inport> id="-1"  name = "System Reset" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "niose_power" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "Signal Drop-out/Drop-out" width = "1" datatype = "0"</inport>
-<inport> id="-1"  name = "joystick/L2_continuous" width = "1" datatype = "0"</inport>
-<inport> id="-1"  name = "joystick/PosXRight" width = "1" datatype = "0"</inport>
-<inport> id="-1"  name = "joystick/PosYRight" width = "1" datatype = "0"</inport>
-<inport> id="-1"  name = "joystick/R2_continuous" width = "1" datatype = "0"</inport>
-<inport> id="-1"  name = "joystick/PosXLeft" width = "1" datatype = "0"</inport>
-<inport> id="-1"  name = "joystick/PosYLeft" width = "1" datatype = "0"</inport>
-<inport> id="-1"  name = "joystick/L1" width = "1" datatype = "0"</inport>
-<inport> id="-1"  name = "joystick/R1" width = "1" datatype = "0"</inport>
-<inport> id="-1"  name = "joystick/ArrowDown" width = "1" datatype = "0"</inport>
-<inport> id="-1"  name = "joystick/ArrowUp" width = "1" datatype = "0"</inport>
-<inport> id="-1"  name = "joystick/ArrowLeft" width = "1" datatype = "0"</inport>
-<inport> id="-1"  name = "joystick/ArrowRight" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "Guidance/Control inputs/ pathNumber" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "Guidance/s_dot generation/my" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "Gain Matrices/L1_11" width = "1" datatype = "0"</inport>
@@ -34,6 +22,18 @@
 <inport> id="-1"  name = "Gain Matrices/K_p2_1" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "Gain Matrices/K_p2_2" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "Gain Matrices/K_p2_3" width = "1" datatype = "0"</inport>
+<inport> id="-1"  name = "Joystick/joystick/L2_continuous" width = "1" datatype = "0"</inport>
+<inport> id="-1"  name = "Joystick/joystick/PosXRight" width = "1" datatype = "0"</inport>
+<inport> id="-1"  name = "Joystick/joystick/PosYRight" width = "1" datatype = "0"</inport>
+<inport> id="-1"  name = "Joystick/joystick/R2_continuous" width = "1" datatype = "0"</inport>
+<inport> id="-1"  name = "Joystick/joystick/PosXLeft" width = "1" datatype = "0"</inport>
+<inport> id="-1"  name = "Joystick/joystick/PosYLeft" width = "1" datatype = "0"</inport>
+<inport> id="-1"  name = "Joystick/joystick/L1" width = "1" datatype = "0"</inport>
+<inport> id="-1"  name = "Joystick/joystick/R1" width = "1" datatype = "0"</inport>
+<inport> id="-1"  name = "Joystick/joystick/ArrowDown" width = "1" datatype = "0"</inport>
+<inport> id="-1"  name = "Joystick/joystick/ArrowUp" width = "1" datatype = "0"</inport>
+<inport> id="-1"  name = "Joystick/joystick/ArrowLeft" width = "1" datatype = "0"</inport>
+<inport> id="-1"  name = "Joystick/joystick/ArrowRight" width = "1" datatype = "0"</inport>
 <outport> id = "-1" name = "Signal Drop-out/eta_mpsi" width = "1" datatype = "18"</outport>
 <outport> id = "-1" name = "Signal Drop-out/eta_mx" width = "1" datatype = "18"</outport>
 <outport> id = "-1" name = "Signal Drop-out/eta_my" width = "1" datatype = "18"</outport>

@@ -10,7 +10,7 @@
 				<String>CSE1</String>
 			</Property>
 			<Property Name="Version">
-				<String>1.0.0.210</String>
+				<String>1.0.0.213</String>
 			</Property>
 			<Property Name="Creator">
 				<String />
@@ -5197,10 +5197,10 @@
 									<Double>10000</Double>
 								</Property>
 								<Property Name="DLL Size">
-									<I32>264198</I32>
+									<I32>264182</I32>
 								</Property>
 								<Property Name="DLL Timestamp">
-									<Double>3573732922.0322852</Double>
+									<Double>3573733837.9730496</Double>
 								</Property>
 								<Property Name="Decimation">
 									<I32>1</I32>
@@ -5244,7 +5244,7 @@
 										<ForceDownload>false</ForceDownload>
 										<RTDestination>c:\ni-rt\system\ctrl_student_HIL.out</RTDestination>
 										<SupportedTarget>VxWorks</SupportedTarget>
-										<MD5>e352548cbaecb263f19745758890fa4d</MD5>
+										<MD5>e0fe65bd3996a69f581141ea86d28a5c</MD5>
 									</DependentFile>
 								</Property>
 								<Property Name="GlobalParameterScopes">
@@ -5331,6 +5331,186 @@
 										<Description />
 										<Properties />
 										<Errors />
+										<Channel Name="L2_continuous" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+											<Description />
+											<Properties>
+												<Property Name="Model Path">
+													<String>Joystick/joystick/L2_continuous</String>
+												</Property>
+												<Property Name="Index">
+													<I32>23</I32>
+												</Property>
+											</Properties>
+											<Errors />
+											<DefaultValue>
+												<Elem>0</Elem>
+											</DefaultValue>
+										</Channel>
+										<Channel Name="PosXRight" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+											<Description />
+											<Properties>
+												<Property Name="Model Path">
+													<String>Joystick/joystick/PosXRight</String>
+												</Property>
+												<Property Name="Index">
+													<I32>24</I32>
+												</Property>
+											</Properties>
+											<Errors />
+											<DefaultValue>
+												<Elem>0</Elem>
+											</DefaultValue>
+										</Channel>
+										<Channel Name="PosYRight" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+											<Description />
+											<Properties>
+												<Property Name="Model Path">
+													<String>Joystick/joystick/PosYRight</String>
+												</Property>
+												<Property Name="Index">
+													<I32>25</I32>
+												</Property>
+											</Properties>
+											<Errors />
+											<DefaultValue>
+												<Elem>0</Elem>
+											</DefaultValue>
+										</Channel>
+										<Channel Name="R2_continuous" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+											<Description />
+											<Properties>
+												<Property Name="Model Path">
+													<String>Joystick/joystick/R2_continuous</String>
+												</Property>
+												<Property Name="Index">
+													<I32>26</I32>
+												</Property>
+											</Properties>
+											<Errors />
+											<DefaultValue>
+												<Elem>0</Elem>
+											</DefaultValue>
+										</Channel>
+										<Channel Name="PosXLeft" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+											<Description />
+											<Properties>
+												<Property Name="Model Path">
+													<String>Joystick/joystick/PosXLeft</String>
+												</Property>
+												<Property Name="Index">
+													<I32>27</I32>
+												</Property>
+											</Properties>
+											<Errors />
+											<DefaultValue>
+												<Elem>0</Elem>
+											</DefaultValue>
+										</Channel>
+										<Channel Name="PosYLeft" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+											<Description />
+											<Properties>
+												<Property Name="Model Path">
+													<String>Joystick/joystick/PosYLeft</String>
+												</Property>
+												<Property Name="Index">
+													<I32>28</I32>
+												</Property>
+											</Properties>
+											<Errors />
+											<DefaultValue>
+												<Elem>0</Elem>
+											</DefaultValue>
+										</Channel>
+										<Channel Name="L1" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+											<Description />
+											<Properties>
+												<Property Name="Model Path">
+													<String>Joystick/joystick/L1</String>
+												</Property>
+												<Property Name="Index">
+													<I32>29</I32>
+												</Property>
+											</Properties>
+											<Errors />
+											<DefaultValue>
+												<Elem>0</Elem>
+											</DefaultValue>
+										</Channel>
+										<Channel Name="R1" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+											<Description />
+											<Properties>
+												<Property Name="Model Path">
+													<String>Joystick/joystick/R1</String>
+												</Property>
+												<Property Name="Index">
+													<I32>30</I32>
+												</Property>
+											</Properties>
+											<Errors />
+											<DefaultValue>
+												<Elem>0</Elem>
+											</DefaultValue>
+										</Channel>
+										<Channel Name="ArrowDown" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+											<Description />
+											<Properties>
+												<Property Name="Model Path">
+													<String>Joystick/joystick/ArrowDown</String>
+												</Property>
+												<Property Name="Index">
+													<I32>31</I32>
+												</Property>
+											</Properties>
+											<Errors />
+											<DefaultValue>
+												<Elem>0</Elem>
+											</DefaultValue>
+										</Channel>
+										<Channel Name="ArrowUp" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+											<Description />
+											<Properties>
+												<Property Name="Model Path">
+													<String>Joystick/joystick/ArrowUp</String>
+												</Property>
+												<Property Name="Index">
+													<I32>32</I32>
+												</Property>
+											</Properties>
+											<Errors />
+											<DefaultValue>
+												<Elem>0</Elem>
+											</DefaultValue>
+										</Channel>
+										<Channel Name="ArrowLeft" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+											<Description />
+											<Properties>
+												<Property Name="Model Path">
+													<String>Joystick/joystick/ArrowLeft</String>
+												</Property>
+												<Property Name="Index">
+													<I32>33</I32>
+												</Property>
+											</Properties>
+											<Errors />
+											<DefaultValue>
+												<Elem>0</Elem>
+											</DefaultValue>
+										</Channel>
+										<Channel Name="ArrowRight" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+											<Description />
+											<Properties>
+												<Property Name="Model Path">
+													<String>Joystick/joystick/ArrowRight</String>
+												</Property>
+												<Property Name="Index">
+													<I32>34</I32>
+												</Property>
+											</Properties>
+											<Errors />
+											<DefaultValue>
+												<Elem>0</Elem>
+											</DefaultValue>
+										</Channel>
 									</Section>
 								</Section>
 								<Section Name="Guidance" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
@@ -5348,7 +5528,7 @@
 													<String>Guidance/Control inputs/ pathNumber</String>
 												</Property>
 												<Property Name="Index">
-													<I32>21</I32>
+													<I32>9</I32>
 												</Property>
 											</Properties>
 											<Errors />
@@ -5368,7 +5548,7 @@
 													<String>Guidance/s_dot generation/my</String>
 												</Property>
 												<Property Name="Index">
-													<I32>22</I32>
+													<I32>10</I32>
 												</Property>
 											</Properties>
 											<Errors />
@@ -5389,7 +5569,7 @@
 												<String>Gain Matrices/K_p2_1</String>
 											</Property>
 											<Property Name="Index">
-												<I32>32</I32>
+												<I32>20</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5404,7 +5584,7 @@
 												<String>Gain Matrices/K_p2_2</String>
 											</Property>
 											<Property Name="Index">
-												<I32>33</I32>
+												<I32>21</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5419,7 +5599,7 @@
 												<String>Gain Matrices/K_p2_3</String>
 											</Property>
 											<Property Name="Index">
-												<I32>34</I32>
+												<I32>22</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5434,7 +5614,7 @@
 												<String>Gain Matrices/L1_11</String>
 											</Property>
 											<Property Name="Index">
-												<I32>23</I32>
+												<I32>11</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5449,7 +5629,7 @@
 												<String>Gain Matrices/L3_11</String>
 											</Property>
 											<Property Name="Index">
-												<I32>29</I32>
+												<I32>17</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5464,7 +5644,7 @@
 												<String>Gain Matrices/L3_22</String>
 											</Property>
 											<Property Name="Index">
-												<I32>30</I32>
+												<I32>18</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5479,7 +5659,7 @@
 												<String>Gain Matrices/L3_33</String>
 											</Property>
 											<Property Name="Index">
-												<I32>31</I32>
+												<I32>19</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5494,7 +5674,7 @@
 												<String>Gain Matrices/L2_33</String>
 											</Property>
 											<Property Name="Index">
-												<I32>28</I32>
+												<I32>16</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5509,7 +5689,7 @@
 												<String>Gain Matrices/L1_33</String>
 											</Property>
 											<Property Name="Index">
-												<I32>25</I32>
+												<I32>13</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5524,7 +5704,7 @@
 												<String>Gain Matrices/L1_22</String>
 											</Property>
 											<Property Name="Index">
-												<I32>24</I32>
+												<I32>12</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5539,7 +5719,7 @@
 												<String>Gain Matrices/L2_11</String>
 											</Property>
 											<Property Name="Index">
-												<I32>26</I32>
+												<I32>14</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5554,7 +5734,7 @@
 												<String>Gain Matrices/L2_22</String>
 											</Property>
 											<Property Name="Index">
-												<I32>27</I32>
+												<I32>15</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5567,186 +5747,6 @@
 									<Description />
 									<Properties />
 									<Errors />
-									<Channel Name="L2_continuous" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>joystick/L2_continuous</String>
-											</Property>
-											<Property Name="Index">
-												<I32>9</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="PosXRight" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>joystick/PosXRight</String>
-											</Property>
-											<Property Name="Index">
-												<I32>10</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="PosYRight" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>joystick/PosYRight</String>
-											</Property>
-											<Property Name="Index">
-												<I32>11</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="R2_continuous" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>joystick/R2_continuous</String>
-											</Property>
-											<Property Name="Index">
-												<I32>12</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="PosXLeft" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>joystick/PosXLeft</String>
-											</Property>
-											<Property Name="Index">
-												<I32>13</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="PosYLeft" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>joystick/PosYLeft</String>
-											</Property>
-											<Property Name="Index">
-												<I32>14</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="L1" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>joystick/L1</String>
-											</Property>
-											<Property Name="Index">
-												<I32>15</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="R1" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>joystick/R1</String>
-											</Property>
-											<Property Name="Index">
-												<I32>16</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="ArrowDown" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>joystick/ArrowDown</String>
-											</Property>
-											<Property Name="Index">
-												<I32>17</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="ArrowUp" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>joystick/ArrowUp</String>
-											</Property>
-											<Property Name="Index">
-												<I32>18</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="ArrowLeft" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>joystick/ArrowLeft</String>
-											</Property>
-											<Property Name="Index">
-												<I32>19</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="ArrowRight" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>joystick/ArrowRight</String>
-											</Property>
-											<Property Name="Index">
-												<I32>20</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
 								</Section>
 								<Channel Name="niose_power" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
 									<Description />
