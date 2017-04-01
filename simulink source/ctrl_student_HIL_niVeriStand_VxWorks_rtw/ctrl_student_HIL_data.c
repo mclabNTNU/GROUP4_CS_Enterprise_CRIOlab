@@ -15,9 +15,9 @@
  *
  * Code generation for model "ctrl_student_HIL".
  *
- * Model version              : 1.256
+ * Model version              : 1.279
  * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
- * C source code generated on : Fri Mar 31 16:53:13 2017
+ * C source code generated on : Sat Apr 01 17:20:34 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -40,7 +40,7 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
                                         * Referenced by: '<S4>/Step size'
                                         */
   0.0,                                 /* Expression: 0
-                                        * Referenced by: '<S23>/counter'
+                                        * Referenced by: '<S22>/counter'
                                         */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<Root>/niose_power'
@@ -64,31 +64,31 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
                                         * Referenced by: '<Root>/Gain'
                                         */
   0.0,                                 /* Expression: 0
-                                        * Referenced by: '<S29>/White Noise'
+                                        * Referenced by: '<S28>/White Noise'
                                         */
   1.0,                                 /* Computed Parameter: WhiteNoise_StdDev
-                                        * Referenced by: '<S29>/White Noise'
+                                        * Referenced by: '<S28>/White Noise'
                                         */
   9024.0,                              /* Expression: 9024
+                                        * Referenced by: '<S28>/White Noise'
+                                        */
+  0.0,                                 /* Expression: 0
+                                        * Referenced by: '<S29>/White Noise'
+                                        */
+  1.0,                                 /* Computed Parameter: WhiteNoise_StdDev_d
+                                        * Referenced by: '<S29>/White Noise'
+                                        */
+  123.0,                               /* Expression: 123
                                         * Referenced by: '<S29>/White Noise'
                                         */
   0.0,                                 /* Expression: 0
-                                        * Referenced by: '<S30>/White Noise'
-                                        */
-  1.0,                                 /* Computed Parameter: WhiteNoise_StdDev_d
-                                        * Referenced by: '<S30>/White Noise'
-                                        */
-  123.0,                               /* Expression: 123
-                                        * Referenced by: '<S30>/White Noise'
-                                        */
-  0.0,                                 /* Expression: 0
-                                        * Referenced by: '<S28>/White Noise'
+                                        * Referenced by: '<S27>/White Noise'
                                         */
   1.0,                                 /* Computed Parameter: WhiteNoise_StdDev_g
-                                        * Referenced by: '<S28>/White Noise'
+                                        * Referenced by: '<S27>/White Noise'
                                         */
   9025.0,                              /* Expression: 9025
-                                        * Referenced by: '<S28>/White Noise'
+                                        * Referenced by: '<S27>/White Noise'
                                         */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<Root>/y_in'
@@ -145,7 +145,7 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
                                         * Referenced by: '<Root>/psi_in'
                                         */
   0.0,                                 /* Expression: 0
-                                        * Referenced by: '<S24>/Hold'
+                                        * Referenced by: '<S23>/Hold'
                                         */
   1.0,                                 /* Expression: 1
                                         * Referenced by: '<Root>/Constant2'
@@ -175,7 +175,7 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
   { 0.0, 0.0, 0.0 },
 
   /*  Expression: [0 0 0]
-   * Referenced by: '<S36>/Memory'
+   * Referenced by: '<S35>/Memory'
    */
   { 0.0, 0.0, 0.0 },
   -1.0,                                /* Expression: width
@@ -636,51 +636,93 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
   0.0,                                 /* Expression: 0
                                         * Referenced by: '<S3>/Integrator1'
                                         */
+  -1.0,                                /* Expression: width
+                                        * Referenced by: '<S14>/ pathNumber'
+                                        */
+  1.0,                                 /* Expression: dtype
+                                        * Referenced by: '<S14>/ pathNumber'
+                                        */
+  40.0,                                /* Expression: portnum
+                                        * Referenced by: '<S14>/ pathNumber'
+                                        */
+  -1.0,                                /* Expression: stime
+                                        * Referenced by: '<S14>/ pathNumber'
+                                        */
+  1.0,                                 /* Expression: stype
+                                        * Referenced by: '<S14>/ pathNumber'
+                                        */
+  1.0,                                 /* Expression: btype
+                                        * Referenced by: '<S14>/ pathNumber'
+                                        */
+  -1.0,                                /* Expression: width
+                                        * Referenced by: '<S14>/ U_ref'
+                                        */
+  1.0,                                 /* Expression: dtype
+                                        * Referenced by: '<S14>/ U_ref'
+                                        */
+  41.0,                                /* Expression: portnum
+                                        * Referenced by: '<S14>/ U_ref'
+                                        */
+  -1.0,                                /* Expression: stime
+                                        * Referenced by: '<S14>/ U_ref'
+                                        */
+  1.0,                                 /* Expression: stype
+                                        * Referenced by: '<S14>/ U_ref'
+                                        */
+  1.0,                                 /* Expression: btype
+                                        * Referenced by: '<S14>/ U_ref'
+                                        */
   1.0,                                 /* Expression: 1
-                                        * Referenced by: '<S15>/Constant1'
+                                        * Referenced by: '<S14>/Constant1'
+                                        */
+  0.1,                                 /* Expression: 0.1
+                                        * Referenced by: '<S14>/Gain'
                                         */
 
   /*  Expression: [0;0;0]
-   * Referenced by: '<S16>/IC'
+   * Referenced by: '<S15>/IC'
    */
   { 0.0, 0.0, 0.0 },
 
   /*  Expression: [0.00001;0.00001;0.00001]
-   * Referenced by: '<S16>/IC1'
+   * Referenced by: '<S15>/IC1'
    */
   { 1.0E-5, 1.0E-5, 1.0E-5 },
   -1.0,                                /* Expression: width
-                                        * Referenced by: '<S19>/my'
+                                        * Referenced by: '<S18>/my'
                                         */
   1.0,                                 /* Expression: dtype
-                                        * Referenced by: '<S19>/my'
+                                        * Referenced by: '<S18>/my'
                                         */
   1.0,                                 /* Expression: portnum
-                                        * Referenced by: '<S19>/my'
+                                        * Referenced by: '<S18>/my'
                                         */
   -1.0,                                /* Expression: stime
-                                        * Referenced by: '<S19>/my'
+                                        * Referenced by: '<S18>/my'
                                         */
   1.0,                                 /* Expression: stype
-                                        * Referenced by: '<S19>/my'
+                                        * Referenced by: '<S18>/my'
                                         */
   1.0,                                 /* Expression: btype
-                                        * Referenced by: '<S19>/my'
+                                        * Referenced by: '<S18>/my'
+                                        */
+  0.001,                               /* Expression: 0.001
+                                        * Referenced by: '<S18>/Gain'
                                         */
   1.0E-7,                              /* Expression: 0.0000001
-                                        * Referenced by: '<S19>/Memory'
+                                        * Referenced by: '<S18>/Memory'
                                         */
   1.0E-7,                              /* Expression: 0.0000001
-                                        * Referenced by: '<S16>/IC3'
+                                        * Referenced by: '<S15>/IC3'
                                         */
 
   /*  Expression: [0.0000001;0.0000001;0.0000001]
-   * Referenced by: '<S16>/IC2'
+   * Referenced by: '<S15>/IC2'
    */
   { 1.0E-7, 1.0E-7, 1.0E-7 },
 
   /*  Expression: [0.2 0 0;0 0.2 0;0 0 0.1]
-   * Referenced by: '<S15>/Constant'
+   * Referenced by: '<S14>/Constant'
    */
   { 0.2, 0.0, 0.0, 0.0, 0.2, 0.0, 0.0, 0.0, 0.1 },
   -1.0,                                /* Expression: width
@@ -743,7 +785,7 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
    */
   { 0.0, 0.0, 0.0 },
   0.0,                                 /* Expression: 0
-                                        * Referenced by: '<S31>/Integrator'
+                                        * Referenced by: '<S30>/Integrator'
                                         */
 
   /*  Expression: [0; 0; 0]
@@ -940,58 +982,202 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
                                         * Referenced by: '<S1>/tau_d_y'
                                         */
   -1.0,                                /* Expression: width
-                                        * Referenced by: '<S34>/ nu_x_hat'
+                                        * Referenced by: '<S1>/z1_psi'
                                         */
   1.0,                                 /* Expression: dtype
-                                        * Referenced by: '<S34>/ nu_x_hat'
+                                        * Referenced by: '<S1>/z1_psi'
+                                        */
+  4.0,                                 /* Expression: portnum
+                                        * Referenced by: '<S1>/z1_psi'
+                                        */
+  -1.0,                                /* Expression: stime
+                                        * Referenced by: '<S1>/z1_psi'
+                                        */
+  1.0,                                 /* Expression: stype
+                                        * Referenced by: '<S1>/z1_psi'
+                                        */
+  0.0,                                 /* Expression: btype
+                                        * Referenced by: '<S1>/z1_psi'
+                                        */
+  -1.0,                                /* Expression: width
+                                        * Referenced by: '<S1>/z1_x'
+                                        */
+  1.0,                                 /* Expression: dtype
+                                        * Referenced by: '<S1>/z1_x'
+                                        */
+  5.0,                                 /* Expression: portnum
+                                        * Referenced by: '<S1>/z1_x'
+                                        */
+  -1.0,                                /* Expression: stime
+                                        * Referenced by: '<S1>/z1_x'
+                                        */
+  1.0,                                 /* Expression: stype
+                                        * Referenced by: '<S1>/z1_x'
+                                        */
+  0.0,                                 /* Expression: btype
+                                        * Referenced by: '<S1>/z1_x'
+                                        */
+  -1.0,                                /* Expression: width
+                                        * Referenced by: '<S1>/z1_y'
+                                        */
+  1.0,                                 /* Expression: dtype
+                                        * Referenced by: '<S1>/z1_y'
+                                        */
+  6.0,                                 /* Expression: portnum
+                                        * Referenced by: '<S1>/z1_y'
+                                        */
+  -1.0,                                /* Expression: stime
+                                        * Referenced by: '<S1>/z1_y'
+                                        */
+  1.0,                                 /* Expression: stype
+                                        * Referenced by: '<S1>/z1_y'
+                                        */
+  0.0,                                 /* Expression: btype
+                                        * Referenced by: '<S1>/z1_y'
+                                        */
+  -1.0,                                /* Expression: width
+                                        * Referenced by: '<S3>/s'
+                                        */
+  1.0,                                 /* Expression: dtype
+                                        * Referenced by: '<S3>/s'
                                         */
   1.0,                                 /* Expression: portnum
-                                        * Referenced by: '<S34>/ nu_x_hat'
+                                        * Referenced by: '<S3>/s'
                                         */
   -1.0,                                /* Expression: stime
-                                        * Referenced by: '<S34>/ nu_x_hat'
+                                        * Referenced by: '<S3>/s'
                                         */
   1.0,                                 /* Expression: stype
-                                        * Referenced by: '<S34>/ nu_x_hat'
+                                        * Referenced by: '<S3>/s'
                                         */
   0.0,                                 /* Expression: btype
-                                        * Referenced by: '<S34>/ nu_x_hat'
+                                        * Referenced by: '<S3>/s'
                                         */
   -1.0,                                /* Expression: width
-                                        * Referenced by: '<S34>/ nu_y_hat'
+                                        * Referenced by: '<S3>/s_dot'
                                         */
   1.0,                                 /* Expression: dtype
-                                        * Referenced by: '<S34>/ nu_y_hat'
+                                        * Referenced by: '<S3>/s_dot'
+                                        */
+  30.0,                                /* Expression: portnum
+                                        * Referenced by: '<S3>/s_dot'
+                                        */
+  -1.0,                                /* Expression: stime
+                                        * Referenced by: '<S3>/s_dot'
+                                        */
+  1.0,                                 /* Expression: stype
+                                        * Referenced by: '<S3>/s_dot'
+                                        */
+  0.0,                                 /* Expression: btype
+                                        * Referenced by: '<S3>/s_dot'
+                                        */
+  -1.0,                                /* Expression: width
+                                        * Referenced by: '<S5>/bias_x'
+                                        */
+  1.0,                                 /* Expression: dtype
+                                        * Referenced by: '<S5>/bias_x'
+                                        */
+  35.0,                                /* Expression: portnum
+                                        * Referenced by: '<S5>/bias_x'
+                                        */
+  -1.0,                                /* Expression: stime
+                                        * Referenced by: '<S5>/bias_x'
+                                        */
+  1.0,                                 /* Expression: stype
+                                        * Referenced by: '<S5>/bias_x'
+                                        */
+  0.0,                                 /* Expression: btype
+                                        * Referenced by: '<S5>/bias_x'
+                                        */
+  -1.0,                                /* Expression: width
+                                        * Referenced by: '<S5>/bias_y'
+                                        */
+  1.0,                                 /* Expression: dtype
+                                        * Referenced by: '<S5>/bias_y'
+                                        */
+  36.0,                                /* Expression: portnum
+                                        * Referenced by: '<S5>/bias_y'
+                                        */
+  -1.0,                                /* Expression: stime
+                                        * Referenced by: '<S5>/bias_y'
+                                        */
+  1.0,                                 /* Expression: stype
+                                        * Referenced by: '<S5>/bias_y'
+                                        */
+  0.0,                                 /* Expression: btype
+                                        * Referenced by: '<S5>/bias_y'
+                                        */
+  -1.0,                                /* Expression: width
+                                        * Referenced by: '<S5>/bias_psi'
+                                        */
+  1.0,                                 /* Expression: dtype
+                                        * Referenced by: '<S5>/bias_psi'
+                                        */
+  37.0,                                /* Expression: portnum
+                                        * Referenced by: '<S5>/bias_psi'
+                                        */
+  -1.0,                                /* Expression: stime
+                                        * Referenced by: '<S5>/bias_psi'
+                                        */
+  1.0,                                 /* Expression: stype
+                                        * Referenced by: '<S5>/bias_psi'
+                                        */
+  0.0,                                 /* Expression: btype
+                                        * Referenced by: '<S5>/bias_psi'
+                                        */
+  -1.0,                                /* Expression: width
+                                        * Referenced by: '<S33>/ nu_x_hat'
+                                        */
+  1.0,                                 /* Expression: dtype
+                                        * Referenced by: '<S33>/ nu_x_hat'
+                                        */
+  1.0,                                 /* Expression: portnum
+                                        * Referenced by: '<S33>/ nu_x_hat'
+                                        */
+  -1.0,                                /* Expression: stime
+                                        * Referenced by: '<S33>/ nu_x_hat'
+                                        */
+  1.0,                                 /* Expression: stype
+                                        * Referenced by: '<S33>/ nu_x_hat'
+                                        */
+  0.0,                                 /* Expression: btype
+                                        * Referenced by: '<S33>/ nu_x_hat'
+                                        */
+  -1.0,                                /* Expression: width
+                                        * Referenced by: '<S33>/ nu_y_hat'
+                                        */
+  1.0,                                 /* Expression: dtype
+                                        * Referenced by: '<S33>/ nu_y_hat'
                                         */
   2.0,                                 /* Expression: portnum
-                                        * Referenced by: '<S34>/ nu_y_hat'
+                                        * Referenced by: '<S33>/ nu_y_hat'
                                         */
   -1.0,                                /* Expression: stime
-                                        * Referenced by: '<S34>/ nu_y_hat'
+                                        * Referenced by: '<S33>/ nu_y_hat'
                                         */
   1.0,                                 /* Expression: stype
-                                        * Referenced by: '<S34>/ nu_y_hat'
+                                        * Referenced by: '<S33>/ nu_y_hat'
                                         */
   0.0,                                 /* Expression: btype
-                                        * Referenced by: '<S34>/ nu_y_hat'
+                                        * Referenced by: '<S33>/ nu_y_hat'
                                         */
   -1.0,                                /* Expression: width
-                                        * Referenced by: '<S34>/nu_psi_hat'
+                                        * Referenced by: '<S33>/nu_psi_hat'
                                         */
   1.0,                                 /* Expression: dtype
-                                        * Referenced by: '<S34>/nu_psi_hat'
+                                        * Referenced by: '<S33>/nu_psi_hat'
                                         */
   3.0,                                 /* Expression: portnum
-                                        * Referenced by: '<S34>/nu_psi_hat'
+                                        * Referenced by: '<S33>/nu_psi_hat'
                                         */
   -1.0,                                /* Expression: stime
-                                        * Referenced by: '<S34>/nu_psi_hat'
+                                        * Referenced by: '<S33>/nu_psi_hat'
                                         */
   1.0,                                 /* Expression: stype
-                                        * Referenced by: '<S34>/nu_psi_hat'
+                                        * Referenced by: '<S33>/nu_psi_hat'
                                         */
   0.0,                                 /* Expression: btype
-                                        * Referenced by: '<S34>/nu_psi_hat'
+                                        * Referenced by: '<S33>/nu_psi_hat'
                                         */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<S2>/L1_11'
@@ -1631,9 +1817,37 @@ NI_ParamSizeWidth P_ctrl_student_HIL_T_sizes[] DataSection(
 
   { sizeof(real_T), 1, 0 },
 
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
   { sizeof(real_T), 3, 0 },
 
   { sizeof(real_T), 3, 0 },
+
+  { sizeof(real_T), 1, 0 },
 
   { sizeof(real_T), 1, 0 },
 
@@ -1696,6 +1910,102 @@ NI_ParamSizeWidth P_ctrl_student_HIL_T_sizes[] DataSection(
   { sizeof(real_T), 1, 0 },
 
   { sizeof(real_T), 3, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
 
   { sizeof(real_T), 1, 0 },
 

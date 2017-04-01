@@ -10,7 +10,7 @@
 				<String>CSE1</String>
 			</Property>
 			<Property Name="Version">
-				<String>1.0.0.125</String>
+				<String>1.0.0.159</String>
 			</Property>
 			<Property Name="Creator">
 				<String />
@@ -5197,10 +5197,10 @@
 									<Double>10000</Double>
 								</Property>
 								<Property Name="DLL Size">
-									<I32>265598</I32>
+									<I32>279742</I32>
 								</Property>
 								<Property Name="DLL Timestamp">
-									<Double>3573816803.3806229</Double>
+									<Double>3573904845.6379271</Double>
 								</Property>
 								<Property Name="Decimation">
 									<I32>1</I32>
@@ -5244,7 +5244,7 @@
 										<ForceDownload>false</ForceDownload>
 										<RTDestination>c:\ni-rt\system\ctrl_student_HIL.out</RTDestination>
 										<SupportedTarget>VxWorks</SupportedTarget>
-										<MD5>25124c0fc6b90332a7c0a8e3fe6ccca4</MD5>
+										<MD5>8698acf31e762e499a31a6dd0cf75179</MD5>
 									</DependentFile>
 								</Property>
 								<Property Name="GlobalParameterScopes">
@@ -5552,6 +5552,36 @@
 										<Description />
 										<Properties />
 										<Errors />
+										<Channel Name=" pathNumber" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+											<Description />
+											<Properties>
+												<Property Name="Model Path">
+													<String>Guidance/Control inputs/ pathNumber</String>
+												</Property>
+												<Property Name="Index">
+													<I32>21</I32>
+												</Property>
+											</Properties>
+											<Errors />
+											<DefaultValue>
+												<Elem>0</Elem>
+											</DefaultValue>
+										</Channel>
+										<Channel Name=" U_ref" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+											<Description />
+											<Properties>
+												<Property Name="Model Path">
+													<String>Guidance/Control inputs/ U_ref</String>
+												</Property>
+												<Property Name="Index">
+													<I32>22</I32>
+												</Property>
+											</Properties>
+											<Errors />
+											<DefaultValue>
+												<Elem>0</Elem>
+											</DefaultValue>
+										</Channel>
 									</Section>
 									<Section Name="s_dot generation" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
 										<Description />
@@ -5564,7 +5594,7 @@
 													<String>Guidance/s_dot generation/my</String>
 												</Property>
 												<Property Name="Index">
-													<I32>21</I32>
+													<I32>23</I32>
 												</Property>
 											</Properties>
 											<Errors />
@@ -5585,7 +5615,7 @@
 												<String>Gain Matrices/K_p2_1</String>
 											</Property>
 											<Property Name="Index">
-												<I32>22</I32>
+												<I32>24</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5600,7 +5630,7 @@
 												<String>Gain Matrices/K_p2_2</String>
 											</Property>
 											<Property Name="Index">
-												<I32>23</I32>
+												<I32>25</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5615,7 +5645,7 @@
 												<String>Gain Matrices/K_p2_3</String>
 											</Property>
 											<Property Name="Index">
-												<I32>24</I32>
+												<I32>26</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5630,7 +5660,7 @@
 												<String>Gain Matrices/L1_11</String>
 											</Property>
 											<Property Name="Index">
-												<I32>25</I32>
+												<I32>27</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5645,7 +5675,7 @@
 												<String>Gain Matrices/L1_22</String>
 											</Property>
 											<Property Name="Index">
-												<I32>26</I32>
+												<I32>28</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5660,7 +5690,7 @@
 												<String>Gain Matrices/L1_33</String>
 											</Property>
 											<Property Name="Index">
-												<I32>27</I32>
+												<I32>29</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5675,7 +5705,7 @@
 												<String>Gain Matrices/L2_11</String>
 											</Property>
 											<Property Name="Index">
-												<I32>28</I32>
+												<I32>30</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5690,7 +5720,7 @@
 												<String>Gain Matrices/L2_22</String>
 											</Property>
 											<Property Name="Index">
-												<I32>29</I32>
+												<I32>31</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5705,7 +5735,7 @@
 												<String>Gain Matrices/L2_33</String>
 											</Property>
 											<Property Name="Index">
-												<I32>30</I32>
+												<I32>32</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5720,7 +5750,7 @@
 												<String>Gain Matrices/L3_11</String>
 											</Property>
 											<Property Name="Index">
-												<I32>31</I32>
+												<I32>33</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5735,7 +5765,7 @@
 												<String>Gain Matrices/L3_22</String>
 											</Property>
 											<Property Name="Index">
-												<I32>32</I32>
+												<I32>34</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5750,7 +5780,7 @@
 												<String>Gain Matrices/L3_33</String>
 											</Property>
 											<Property Name="Index">
-												<I32>33</I32>
+												<I32>35</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5913,7 +5943,7 @@
 												<String>eta_d to veristand/eta_d_PSI</String>
 											</Property>
 											<Property Name="Index">
-												<I32>40</I32>
+												<I32>42</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5928,7 +5958,7 @@
 												<String>eta_d to veristand/eta_d_X</String>
 											</Property>
 											<Property Name="Index">
-												<I32>41</I32>
+												<I32>43</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5943,7 +5973,7 @@
 												<String>eta_d to veristand/eta_d_Y</String>
 											</Property>
 											<Property Name="Index">
-												<I32>42</I32>
+												<I32>44</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5963,7 +5993,7 @@
 												<String>tau to CSE mocell (only use for HIL testing)/N_d</String>
 											</Property>
 											<Property Name="Index">
-												<I32>43</I32>
+												<I32>45</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5978,7 +6008,7 @@
 												<String>tau to CSE mocell (only use for HIL testing)/X_d</String>
 											</Property>
 											<Property Name="Index">
-												<I32>44</I32>
+												<I32>46</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5993,7 +6023,7 @@
 												<String>tau to CSE mocell (only use for HIL testing)/Y_d</String>
 											</Property>
 											<Property Name="Index">
-												<I32>45</I32>
+												<I32>47</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6008,7 +6038,7 @@
 												<String>tau to CSE mocell (only use for HIL testing)/integrator reset model</String>
 											</Property>
 											<Property Name="Index">
-												<I32>46</I32>
+												<I32>48</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6023,7 +6053,7 @@
 												<String>tau to CSE mocell (only use for HIL testing)/psi_0 </String>
 											</Property>
 											<Property Name="Index">
-												<I32>47</I32>
+												<I32>49</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6038,7 +6068,7 @@
 												<String>tau to CSE mocell (only use for HIL testing)/x_0</String>
 											</Property>
 											<Property Name="Index">
-												<I32>48</I32>
+												<I32>50</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6053,7 +6083,7 @@
 												<String>tau to CSE mocell (only use for HIL testing)/y_0</String>
 											</Property>
 											<Property Name="Index">
-												<I32>49</I32>
+												<I32>51</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6073,7 +6103,7 @@
 												<String>Controller/tau_d_x</String>
 											</Property>
 											<Property Name="Index">
-												<I32>50</I32>
+												<I32>52</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6088,7 +6118,7 @@
 												<String>Controller/tau_d_psi</String>
 											</Property>
 											<Property Name="Index">
-												<I32>51</I32>
+												<I32>53</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6103,7 +6133,52 @@
 												<String>Controller/tau_d_y</String>
 											</Property>
 											<Property Name="Index">
-												<I32>52</I32>
+												<I32>54</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="z1_psi" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>Controller/z1_psi</String>
+											</Property>
+											<Property Name="Index">
+												<I32>55</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="z1_x" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>Controller/z1_x</String>
+											</Property>
+											<Property Name="Index">
+												<I32>56</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="z1_y" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>Controller/z1_y</String>
+											</Property>
+											<Property Name="Index">
+												<I32>57</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6127,7 +6202,7 @@
 													<String>Observer/nu_hat_out/ nu_x_hat</String>
 												</Property>
 												<Property Name="Index">
-													<I32>53</I32>
+													<I32>63</I32>
 												</Property>
 											</Properties>
 											<Errors />
@@ -6142,7 +6217,7 @@
 													<String>Observer/nu_hat_out/ nu_y_hat</String>
 												</Property>
 												<Property Name="Index">
-													<I32>54</I32>
+													<I32>64</I32>
 												</Property>
 											</Properties>
 											<Errors />
@@ -6157,7 +6232,7 @@
 													<String>Observer/nu_hat_out/nu_psi_hat</String>
 												</Property>
 												<Property Name="Index">
-													<I32>55</I32>
+													<I32>65</I32>
 												</Property>
 											</Properties>
 											<Errors />
@@ -6166,6 +6241,51 @@
 											</DefaultValue>
 										</Channel>
 									</Section>
+									<Channel Name="bias_x" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>Observer/bias_x</String>
+											</Property>
+											<Property Name="Index">
+												<I32>60</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="bias_y" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>Observer/bias_y</String>
+											</Property>
+											<Property Name="Index">
+												<I32>61</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="bias_psi" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>Observer/bias_psi</String>
+											</Property>
+											<Property Name="Index">
+												<I32>62</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
 								</Section>
 								<Section Name="Signal Drop-out" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
 									<Description />
@@ -6178,7 +6298,7 @@
 												<String>Signal Drop-out/eta_mpsi</String>
 											</Property>
 											<Property Name="Index">
-												<I32>56</I32>
+												<I32>66</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6193,7 +6313,7 @@
 												<String>Signal Drop-out/eta_mx</String>
 											</Property>
 											<Property Name="Index">
-												<I32>57</I32>
+												<I32>67</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6208,7 +6328,7 @@
 												<String>Signal Drop-out/eta_my</String>
 											</Property>
 											<Property Name="Index">
-												<I32>58</I32>
+												<I32>68</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6221,6 +6341,41 @@
 									<Description />
 									<Properties />
 									<Errors />
+									<Section Name="s_dot generation" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
+										<Description />
+										<Properties />
+										<Errors />
+									</Section>
+									<Channel Name="s" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>Guidance/s</String>
+											</Property>
+											<Property Name="Index">
+												<I32>58</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="s_dot" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>Guidance/s_dot</String>
+											</Property>
+											<Property Name="Index">
+												<I32>59</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
 								</Section>
 								<Channel Name=" eta_tilde_psi" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
 									<Description />
@@ -6229,7 +6384,7 @@
 											<String> eta_tilde_psi</String>
 										</Property>
 										<Property Name="Index">
-											<I32>34</I32>
+											<I32>36</I32>
 										</Property>
 									</Properties>
 									<Errors />
@@ -6244,7 +6399,7 @@
 											<String> eta_tilde_x</String>
 										</Property>
 										<Property Name="Index">
-											<I32>35</I32>
+											<I32>37</I32>
 										</Property>
 									</Properties>
 									<Errors />
@@ -6259,7 +6414,7 @@
 											<String> eta_tilde_y</String>
 										</Property>
 										<Property Name="Index">
-											<I32>36</I32>
+											<I32>38</I32>
 										</Property>
 									</Properties>
 									<Errors />
@@ -6274,7 +6429,7 @@
 											<String>eta_hat_psi</String>
 										</Property>
 										<Property Name="Index">
-											<I32>37</I32>
+											<I32>39</I32>
 										</Property>
 									</Properties>
 									<Errors />
@@ -6289,7 +6444,7 @@
 											<String>eta_hat_x</String>
 										</Property>
 										<Property Name="Index">
-											<I32>38</I32>
+											<I32>40</I32>
 										</Property>
 									</Properties>
 									<Errors />
@@ -6304,7 +6459,7 @@
 											<String>eta_hat_y</String>
 										</Property>
 										<Property Name="Index">
-											<I32>39</I32>
+											<I32>41</I32>
 										</Property>
 									</Properties>
 									<Errors />

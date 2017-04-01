@@ -20,6 +20,8 @@
 <inport> id="-1"  name = "joystick/ArrowUp" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "joystick/ArrowLeft" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "joystick/ArrowRight" width = "1" datatype = "0"</inport>
+<inport> id="-1"  name = "Guidance/Control inputs/ pathNumber" width = "1" datatype = "0"</inport>
+<inport> id="-1"  name = "Guidance/Control inputs/ U_ref" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "Guidance/s_dot generation/my" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "Gain Matrices/K_p2_1" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "Gain Matrices/K_p2_2" width = "1" datatype = "0"</inport>
@@ -52,6 +54,14 @@
 <outport> id = "-1" name = "Controller/tau_d_x" width = "1" datatype = "18"</outport>
 <outport> id = "-1" name = "Controller/tau_d_psi" width = "1" datatype = "18"</outport>
 <outport> id = "-1" name = "Controller/tau_d_y" width = "1" datatype = "18"</outport>
+<outport> id = "-1" name = "Controller/z1_psi" width = "1" datatype = "18"</outport>
+<outport> id = "-1" name = "Controller/z1_x" width = "1" datatype = "18"</outport>
+<outport> id = "-1" name = "Controller/z1_y" width = "1" datatype = "18"</outport>
+<outport> id = "-1" name = "Guidance/s" width = "1" datatype = "0"</outport>
+<outport> id = "-1" name = "Guidance/s_dot" width = "1" datatype = "0"</outport>
+<outport> id = "-1" name = "Observer/bias_x" width = "1" datatype = "18"</outport>
+<outport> id = "-1" name = "Observer/bias_y" width = "1" datatype = "18"</outport>
+<outport> id = "-1" name = "Observer/bias_psi" width = "1" datatype = "18"</outport>
 <outport> id = "-1" name = "Observer/nu_hat_out/ nu_x_hat" width = "1" datatype = "18"</outport>
 <outport> id = "-1" name = "Observer/nu_hat_out/ nu_y_hat" width = "1" datatype = "18"</outport>
 <outport> id = "-1" name = "Observer/nu_hat_out/nu_psi_hat" width = "1" datatype = "18"</outport>
