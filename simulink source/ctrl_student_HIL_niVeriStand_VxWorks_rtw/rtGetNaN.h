@@ -7,9 +7,9 @@
  *
  * Code generation for model "ctrl_student_HIL".
  *
- * Model version              : 1.285
+ * Model version              : 1.296
  * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
- * C source code generated on : Sun Apr 02 14:41:49 2017
+ * C source code generated on : Sun Apr 02 17:23:21 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
