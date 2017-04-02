@@ -7,9 +7,9 @@
  *
  * Code generation for model "ctrl_student_HIL".
  *
- * Model version              : 1.283
+ * Model version              : 1.285
  * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
- * C source code generated on : Sun Apr 02 13:52:02 2017
+ * C source code generated on : Sun Apr 02 14:41:49 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -343,6 +343,7 @@ void ctrl_student_HIL_output(void)
   real_T c_a;
   real_T c_x;
   real_T d_x;
+  real_T U_ref;
   real_T S_r[9];
   real_T z1[3];
   real_T z2[3];
@@ -669,7 +670,10 @@ void ctrl_student_HIL_output(void)
   /* MATLAB Function 'Guidance/Path generation/straight line': '<S20>:1' */
   /* U_ref */
   /* U_ref = 0.1; */
-  /* U_ref = 0.5*(1.01+sin(2*pi*s-(pi/2))); */
+  /* '<S20>:1:4' */
+  U_ref = (sin(6.2831853071795862 * ctrl_student_HIL_B.Integrator1 -
+               1.5707963267948966) + 1.01) * 0.2;
+
   /* Path variables */
   /* '<S20>:1:7' */
   /* '<S20>:1:8' */
@@ -693,8 +697,8 @@ void ctrl_student_HIL_output(void)
   /* '<S20>:1:24' */
   /* U_s */
   /* '<S20>:1:27' */
-  /* '<S20>:1:28' */
-  /* U_ss=U_ref*2*pi*sin(2*pi*s)/(sqrt(a1^2+a2^2))*(1-path); */
+  /* U_ss = 0; */
+  /* '<S20>:1:29' */
   if ((ctrl_student_HIL_DW.IC_FirstOutputTime == (rtMinusInf)) ||
       (ctrl_student_HIL_DW.IC_FirstOutputTime == ctrl_student_HIL_M->Timing.t[0]))
   {
@@ -743,7 +747,7 @@ void ctrl_student_HIL_output(void)
    *  MATLAB Function: '<S15>/straight line'
    */
   yds = rtb_Gain / sqrt(xds * xds + yds * yds) * ctrl_student_HIL_B.pathNumber +
-    rtb_Gain / 8.94427190999916 * (1.0 - ctrl_student_HIL_B.pathNumber);
+    U_ref / 8.94427190999916 * (1.0 - ctrl_student_HIL_B.pathNumber);
   if (rtmIsMajorTimeStep(ctrl_student_HIL_M)) {
     /* Memory: '<S18>/Memory' */
     ctrl_student_HIL_B.Memory_p = ctrl_student_HIL_DW.Memory_PreviousInput_g;
@@ -929,6 +933,8 @@ void ctrl_student_HIL_output(void)
 
   /* InitialCondition: '<S15>/IC3' incorporates:
    *  MATLAB Function: '<S15>/Ellipsoid'
+   *  MATLAB Function: '<S15>/straight line'
+   *  Sum: '<S15>/Sum1'
    */
   if ((ctrl_student_HIL_DW.IC3_FirstOutputTime == (rtMinusInf)) ||
       (ctrl_student_HIL_DW.IC3_FirstOutputTime == ctrl_student_HIL_M->Timing.t[0]))
@@ -939,7 +945,9 @@ void ctrl_student_HIL_output(void)
     ctrl_student_HIL_B.IC3 = -rtb_Gain * 16.0 * sin
       (ctrl_student_HIL_B.Integrator1) * cos(ctrl_student_HIL_B.Integrator1) /
       rt_powd_snf(c_x * c_x * 25.0 + d_x * d_x * 9.0, 1.5) *
-      ctrl_student_HIL_B.pathNumber;
+      ctrl_student_HIL_B.pathNumber + U_ref * 2.0 * 3.1415926535897931 * sin
+      (6.2831853071795862 * ctrl_student_HIL_B.Integrator1) / 8.94427190999916 *
+      (1.0 - ctrl_student_HIL_B.pathNumber);
   }
 
   /* End of InitialCondition: '<S15>/IC3' */
@@ -3688,8 +3696,8 @@ NI_Task NI_TaskList[] DataSection(".NIVS.tasklist") =
 int NI_NumTasks DataSection(".NIVS.numtasks") = 1;
 static char* NI_CompiledModelName DataSection(".NIVS.compiledmodelname") =
   "ctrl_student_hil";
-static char* NI_CompiledModelVersion = "1.283";
-static char* NI_CompiledModelDateTime = "Sun Apr 02 13:52:02 2017";
+static char* NI_CompiledModelVersion = "1.285";
+static char* NI_CompiledModelDateTime = "Sun Apr 02 14:41:49 2017";
 static char* NI_builder DataSection(".NIVS.builder") =
   "NI VeriStand 2014.0.0.82 (2014) RTW Build";
 static char* NI_BuilderVersion DataSection(".NIVS.builderversion") =
