@@ -1,13 +1,7 @@
 	<portlist>
 <inport> id="-1"  name = "niose_power" width = "1" datatype = "0"</inport>
-<inport> id="-1"  name = "y_in" width = "1" datatype = "0"</inport>
-<inport> id="-1"  name = "x_in" width = "1" datatype = "0"</inport>
-<inport> id="-1"  name = "psi_in" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "Signal Drop-out/Drop-out" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "System Reset" width = "1" datatype = "0"</inport>
-<inport> id="-1"  name = "r_in" width = "1" datatype = "0"</inport>
-<inport> id="-1"  name = "u_in" width = "1" datatype = "0"</inport>
-<inport> id="-1"  name = "v_in" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "joystick/L2_continuous" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "joystick/PosXRight" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "joystick/PosYRight" width = "1" datatype = "0"</inport>
@@ -35,6 +29,15 @@
 <inport> id="-1"  name = "Gain Matrices/L3_11" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "Gain Matrices/L3_22" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "Gain Matrices/L3_33" width = "1" datatype = "0"</inport>
+<inport> id="-1"  name = "From Lab/x_pos" width = "1" datatype = "0"</inport>
+<inport> id="-1"  name = "From Lab/y_pos" width = "1" datatype = "0"</inport>
+<inport> id="-1"  name = "From Lab/psi_pos" width = "1" datatype = "0"</inport>
+<inport> id="-1"  name = "From model/y_in" width = "1" datatype = "0"</inport>
+<inport> id="-1"  name = "From model/psi_in" width = "1" datatype = "0"</inport>
+<inport> id="-1"  name = "From model/x_in" width = "1" datatype = "0"</inport>
+<inport> id="-1"  name = "From model/r_in" width = "1" datatype = "0"</inport>
+<inport> id="-1"  name = "From model/u_in" width = "1" datatype = "0"</inport>
+<inport> id="-1"  name = "From model/v_in" width = "1" datatype = "0"</inport>
 <outport> id = "-1" name = " eta_tilde_psi" width = "1" datatype = "18"</outport>
 <outport> id = "-1" name = " eta_tilde_x" width = "1" datatype = "18"</outport>
 <outport> id = "-1" name = " eta_tilde_y" width = "1" datatype = "18"</outport>
@@ -68,4 +71,12 @@
 <outport> id = "-1" name = "Signal Drop-out/eta_mpsi" width = "1" datatype = "18"</outport>
 <outport> id = "-1" name = "Signal Drop-out/eta_mx" width = "1" datatype = "18"</outport>
 <outport> id = "-1" name = "Signal Drop-out/eta_my" width = "1" datatype = "18"</outport>
+<outport> id = "-1" name = "tau to real ship (only use in MCLab)/To thruster of real ship/control input u exceeds bounds" width = "1" datatype = "8"</outport>
+<outport> id = "-1" name = "tau to real ship (only use in MCLab)/To thruster of real ship/u/alpha_VSP1" width = "1" datatype = "0"</outport>
+<outport> id = "-1" name = "tau to real ship (only use in MCLab)/To thruster of real ship/u/alpha_VSP2" width = "1" datatype = "0"</outport>
+<outport> id = "-1" name = "tau to real ship (only use in MCLab)/To thruster of real ship/u/omega_VSP1" width = "1" datatype = "0"</outport>
+<outport> id = "-1" name = "tau to real ship (only use in MCLab)/To thruster of real ship/u/omega_VSP2" width = "1" datatype = "0"</outport>
+<outport> id = "-1" name = "tau to real ship (only use in MCLab)/To thruster of real ship/u/u_BT" width = "1" datatype = "0"</outport>
+<outport> id = "-1" name = "tau to real ship (only use in MCLab)/To thruster of real ship/u/u_VSP1" width = "1" datatype = "0"</outport>
+<outport> id = "-1" name = "tau to real ship (only use in MCLab)/To thruster of real ship/u/u_VSP2" width = "1" datatype = "0"</outport>
 </portlist>
