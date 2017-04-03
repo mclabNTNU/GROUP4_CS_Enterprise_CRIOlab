@@ -58,20 +58,20 @@ CPU             = PPC603
 MODEL           		:= ctrl_sixaxis2thruster
 MODULES         		:= NIVeriStand_main.c ctrl_sixaxis2thruster_data.c rtGetInf.c rtGetNaN.c rt_logging.c rt_nonfinite.c 
 MAKEFILE        		:= ctrl_sixaxis2thruster.mk
-MATLAB_ROOT     		:= C:\Program Files\MATLAB\R2014a
-ALT_MATLAB_ROOT 		:= C:\PROGRA~1\MATLAB\R2014a
-MATLAB_BIN      		:= C:\Program Files\MATLAB\R2014a\bin
-ALT_MATLAB_BIN  		:= C:\PROGRA~1\MATLAB\R2014a\bin
+MATLAB_ROOT     		:= C:\Program Files\MATLAB\R2015a
+ALT_MATLAB_ROOT 		:= C:\PROGRA~1\MATLAB\R2015a
+MATLAB_BIN      		:= C:\Program Files\MATLAB\R2015a\bin
+ALT_MATLAB_BIN  		:= C:\PROGRA~1\MATLAB\R2015a\bin
 S_FUNCTIONS     		:= 
 S_FUNCTIONS_LIB 		:= 
 SOLVER          		:= 
 NUMST           		:= 1
 TID01EQ         		:= 0
 NCSTATES        		:= 0
-BUILDARGS       		:=  NIDEBUG=0 NIOPT="Default" OPTS=""
+BUILDARGS       		:=  NIDEBUG=0 NIOPT="Default" OPTS="" ISPROTECTINGMODEL=NOTPROTECTING
 MULTITASKING    		:= 0
 EXT_MODE        		:= 0
-MATLAB_VERSION			:= R2014a
+MATLAB_VERSION			:= R2015a
 STR_MATLAB_VERSION 		:= "$(MATLAB_VERSION)"
 NIVERISTAND_ROOT		:= C:\VeriStand\2014
 VXWORKS_VERSION			:= $(shell ccppc --version)
@@ -152,8 +152,8 @@ MATLAB_INCLUDES := $(MATLAB_INCLUDES) -I$(MATLAB_ROOT)\rtw\c\src\ext_mode\common
 # Additional file include paths
 
 
-MATLAB_INCLUDES := $(MATLAB_INCLUDES) -IC:\Users\mclab\Dropbox\TMR424~1\06CSE1~1\ctrl_sixaxis2thruster_niVeriStand_VxWorks_rtw
-MATLAB_INCLUDES := $(MATLAB_INCLUDES) -IC:\Users\mclab\Dropbox\TMR424~1\06CSE1~1
+MATLAB_INCLUDES := $(MATLAB_INCLUDES) -IC:\Users\MCLab\DOCUME~1\GitHub\GROUP4~1\SIMULI~1\ctrl_sixaxis2thruster_niVeriStand_VxWorks_rtw
+MATLAB_INCLUDES := $(MATLAB_INCLUDES) -IC:\Users\MCLab\DOCUME~1\GitHub\GROUP4~1\SIMULI~1
 
 INCLUDE := -I$(RELATIVE_PATH_TO_ANCHOR) $(MATLAB_INCLUDES) $(MODELREF_INC_PATH) -I$(NIVERISTAND_ROOT)/ModelInterface/ $(COMPILER_INCLUDES) -I.
 ifneq "$(SHARED_SRC_DIR)" ""

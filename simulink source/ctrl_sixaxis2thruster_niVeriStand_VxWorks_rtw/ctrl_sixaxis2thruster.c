@@ -1,11 +1,15 @@
 /*
  * ctrl_sixaxis2thruster.c
  *
+ * Academic License - for use in teaching, academic research, and meeting
+ * course requirements at degree granting institutions only.  Not for
+ * government, commercial, or other organizational use.
+ *
  * Code generation for model "ctrl_sixaxis2thruster".
  *
- * Model version              : 1.22
- * Simulink Coder version : 8.6 (R2014a) 27-Dec-2013
- * C source code generated on : Wed Feb 25 14:00:14 2015
+ * Model version              : 1.25
+ * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
+ * C source code generated on : Mon Apr 03 16:51:21 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -13,6 +17,7 @@
  * Code generation objectives: Unspecified
  * Validation result: Not run
  */
+
 #include "ctrl_sixaxis2thruster.h"
 #include "ctrl_sixaxis2thruster_private.h"
 
@@ -180,6 +185,10 @@ static void ctrl_sixaxis2thruster_output(void)
   }
 
   /* End of Saturate: '<S3>/Saturation' */
+
+  /* Gain: '<Root>/Gain1' */
+  ctrl_sixaxis2thruster_B.Gain1 = ctrl_sixaxis2thruster_P.Gain1_Gain *
+    ctrl_sixaxis2thruster_B.Saturation_n;
 }
 
 /* Model update function */
@@ -220,7 +229,7 @@ static void ctrl_sixaxis2thruster_update(void)
 }
 
 /* Model initialize function */
-void ctrl_sixaxis2thruster_initialize(void)
+static void ctrl_sixaxis2thruster_initialize(void)
 {
   /* InitializeConditions for UnitDelay: '<S4>/Delay Input1' */
   ctrl_sixaxis2thruster_DW.DelayInput1_DSTATE =
@@ -240,7 +249,7 @@ void ctrl_sixaxis2thruster_initialize(void)
 }
 
 /* Model terminate function */
-void ctrl_sixaxis2thruster_terminate(void)
+static void ctrl_sixaxis2thruster_terminate(void)
 {
   /* (no terminate code required) */
 }
@@ -371,9 +380,9 @@ RT_MODEL_ctrl_sixaxis2thruste_T *ctrl_sixaxis2thruster(void)
   ctrl_sixaxis2thruster_M->Sizes.numU = (0);/* Number of model inputs */
   ctrl_sixaxis2thruster_M->Sizes.sysDirFeedThru = (0);/* The model is not direct feedthrough */
   ctrl_sixaxis2thruster_M->Sizes.numSampTimes = (1);/* Number of sample times */
-  ctrl_sixaxis2thruster_M->Sizes.numBlocks = (43);/* Number of blocks */
-  ctrl_sixaxis2thruster_M->Sizes.numBlockIO = (15);/* Number of block outputs */
-  ctrl_sixaxis2thruster_M->Sizes.numBlockPrms = (110);/* Sum of parameter "widths" */
+  ctrl_sixaxis2thruster_M->Sizes.numBlocks = (44);/* Number of blocks */
+  ctrl_sixaxis2thruster_M->Sizes.numBlockIO = (16);/* Number of block outputs */
+  ctrl_sixaxis2thruster_M->Sizes.numBlockPrms = (111);/* Sum of parameter "widths" */
   return ctrl_sixaxis2thruster_M;
 }
 
@@ -504,7 +513,7 @@ long NIRT_SetValueByDataType(void* ptr,int subindex, double value, int type, int
     return NIRT_SetValueByDataType(ptr,subindex,value,6,Complex);
 
    case 13:
-    //Type is array. Call SetValueByDataType on its contained type
+    //Type is matrix. Call SetValueByDataType on its contained type
     return NIRT_SetValueByDataType(ptr,subindex,value,7,Complex);
 
    case 15:
@@ -667,8 +676,8 @@ void SetExternalOutputs(double* data, int* TaskSampleHit)
 
   // omega_VSP1: Virtual Signal # 0
   if (TaskSampleHit[0]) {              // sample and hold
-    ni_extout[index++] = NIRT_GetValueByDataType
-      (&ctrl_sixaxis2thruster_B.Saturation_n,0,0,0);
+    ni_extout[index++] = NIRT_GetValueByDataType(&ctrl_sixaxis2thruster_B.Gain1,
+      0,0,0);
   } else {
     index += 1;
   }
@@ -715,8 +724,8 @@ int NI_InitExternalOutputs()
     0);
 
   // omega_VSP1: Virtual Signal # 0
-  ni_extout[index++] = NIRT_GetValueByDataType
-    (&ctrl_sixaxis2thruster_B.Saturation_n,0,0,0);
+  ni_extout[index++] = NIRT_GetValueByDataType(&ctrl_sixaxis2thruster_B.Gain1,0,
+    0,0);
 
   // omega_VSP2: Virtual Signal # 0
   ni_extout[index++] = NIRT_GetValueByDataType
@@ -768,9 +777,12 @@ static NI_Parameter NI_ParamList[] DataSection(".NIVS.paramlist") =
 
   { 12, "ctrl_sixaxis2thruster/VSP omega/Saturation/LowerLimit", offsetof
     (P_ctrl_sixaxis2thruster_T, Saturation_LowerSat_o), 22, 1, 2, 24, 0 },
+
+  { 13, "ctrl_sixaxis2thruster/Gain1/Gain", offsetof(P_ctrl_sixaxis2thruster_T,
+    Gain1_Gain), 22, 1, 2, 26, 0 },
 };
 
-static int NI_ParamListSize DataSection(".NIVS.paramlistsize") = 13;
+static int NI_ParamListSize DataSection(".NIVS.paramlistsize") = 14;
 static int NI_ParamDimList[] DataSection(".NIVS.paramdimlist") =
 {
   1, 1,                                /* Parameter at index 0 */
@@ -786,6 +798,7 @@ static int NI_ParamDimList[] DataSection(".NIVS.paramdimlist") =
   1, 1,                                /* Parameter at index 10 */
   1, 1,                                /* Parameter at index 11 */
   1, 1,                                /* Parameter at index 12 */
+  1, 1,                                /* Parameter at index 13 */
 };
 
 static NI_Signal NI_SigList[] DataSection(".NIVS.siglist") =
@@ -848,17 +861,20 @@ static NI_Signal NI_SigList[] DataSection(".NIVS.siglist") =
     (B_ctrl_sixaxis2thruster_T, Saturation_n)+0*sizeof(real_T), BLOCKIO_SIG, 0,
     1, 2, 28, 0 },
 
+  { 15, "ctrl_sixaxis2thruster/Gain1", 0, "", offsetof(B_ctrl_sixaxis2thruster_T,
+    Gain1)+0*sizeof(real_T), BLOCKIO_SIG, 0, 1, 2, 30, 0 },
+
   { -1, "", -1, "", 0, 0, 0 }
 };
 
-static int NI_SigListSize DataSection(".NIVS.siglistsize") = 15;
+static int NI_SigListSize DataSection(".NIVS.siglistsize") = 16;
 static int NI_VirtualBlockSources[1][1];
 static int NI_VirtualBlockOffsets[1][1];
 static int NI_VirtualBlockLengths[1][1];
 static int NI_SigDimList[] DataSection(".NIVS.sigdimlist") =
 {
   1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-  1, 1, 1, 1, };
+  1, 1, 1, 1, 1, 1, };
 
 static long NI_ExtListSize DataSection(".NIVS.extlistsize") = 16;
 static NI_ExternalIO NI_ExtList[] DataSection(".NIVS.extlist") =
@@ -911,8 +927,8 @@ NI_Task NI_TaskList[] DataSection(".NIVS.tasklist") =
 int NI_NumTasks DataSection(".NIVS.numtasks") = 1;
 static char* NI_CompiledModelName DataSection(".NIVS.compiledmodelname") =
   "ctrl_sixaxis2thruster";
-static char* NI_CompiledModelVersion = "1.22";
-static char* NI_CompiledModelDateTime = "Wed Feb 25 14:00:14 2015";
+static char* NI_CompiledModelVersion = "1.25";
+static char* NI_CompiledModelDateTime = "Mon Apr 03 16:51:20 2017";
 static char* NI_builder DataSection(".NIVS.builder") =
   "NI VeriStand 2014.0.0.82 (2014) RTW Build";
 static char* NI_BuilderVersion DataSection(".NIVS.builderversion") =

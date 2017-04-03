@@ -14,4 +14,5 @@
 <signal> id = "13" name = "ctrl_sixaxis2thruster/Gain" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
 <signal> id = "14" name = "ctrl_sixaxis2thruster/ArrowDown" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
 <signal> id = "15" name = "ctrl_sixaxis2thruster/VSP omega/Saturation" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "16" name = "ctrl_sixaxis2thruster/Gain1" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
 </signallist>

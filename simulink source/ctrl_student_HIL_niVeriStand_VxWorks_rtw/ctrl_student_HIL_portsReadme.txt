@@ -6,6 +6,10 @@
 <inport> id="-1"  name = "System Reset" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "Guidance/Control inputs/ pathNumber" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "Guidance/Control inputs/ U_ref" width = "1" datatype = "0"</inport>
+<inport> id="-1"  name = "Guidance/Path generation/x0" width = "1" datatype = "0"</inport>
+<inport> id="-1"  name = "Guidance/Path generation/y0" width = "1" datatype = "0"</inport>
+<inport> id="-1"  name = "Guidance/Path generation/x1" width = "1" datatype = "0"</inport>
+<inport> id="-1"  name = "Guidance/Path generation/y1" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "Guidance/s_dot generation/my" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "Gain Matrices/K_p2_1" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "Gain Matrices/K_p2_2" width = "1" datatype = "0"</inport>
@@ -58,6 +62,7 @@
 <outport> id = "-1" name = "eta_d to veristand/eta_d_PSI" width = "1" datatype = "18"</outport>
 <outport> id = "-1" name = "eta_d to veristand/eta_d_X" width = "1" datatype = "18"</outport>
 <outport> id = "-1" name = "eta_d to veristand/eta_d_Y" width = "1" datatype = "18"</outport>
+<outport> id = "-1" name = "tau to real ship (only use in MCLab)/ U_vsp1" width = "1" datatype = "0"</outport>
 <outport> id = "-1" name = "tau to real ship (only use in MCLab)/To thruster of real ship/control input u exceeds bounds" width = "1" datatype = "8"</outport>
 <outport> id = "-1" name = "tau to real ship (only use in MCLab)/To thruster of real ship/u/alpha_VSP1" width = "1" datatype = "0"</outport>
 <outport> id = "-1" name = "tau to real ship (only use in MCLab)/To thruster of real ship/u/alpha_VSP2" width = "1" datatype = "0"</outport>
@@ -66,6 +71,7 @@
 <outport> id = "-1" name = "tau to real ship (only use in MCLab)/To thruster of real ship/u/u_BT" width = "1" datatype = "0"</outport>
 <outport> id = "-1" name = "tau to real ship (only use in MCLab)/To thruster of real ship/u/u_VSP1" width = "1" datatype = "0"</outport>
 <outport> id = "-1" name = "tau to real ship (only use in MCLab)/To thruster of real ship/u/u_VSP2" width = "1" datatype = "0"</outport>
+<outport> id = "-1" name = "tau to real ship (only use in MCLab)/U_vsp2" width = "1" datatype = "0"</outport>
 <outport> id = "-1" name = "tau_d_y" width = "1" datatype = "18"</outport>
 <outport> id = "-1" name = "Controller/z1_psi" width = "1" datatype = "18"</outport>
 <outport> id = "-1" name = "Controller/z1_x" width = "1" datatype = "18"</outport>

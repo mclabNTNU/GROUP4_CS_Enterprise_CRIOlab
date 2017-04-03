@@ -15,9 +15,9 @@
  *
  * Code generation for model "ctrl_student_HIL".
  *
- * Model version              : 1.301
+ * Model version              : 1.319
  * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
- * C source code generated on : Mon Apr 03 12:48:03 2017
+ * C source code generated on : Mon Apr 03 16:47:02 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -151,6 +151,11 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
   1.0,                                 /* Expression: btype
                                         * Referenced by: '<Root>/System Reset'
                                         */
+
+  /*  Expression: [0 0 0]'
+   * Referenced by: '<S7>/IC'
+   */
+  { 0.0, 0.0, 0.0 },
   -1.0,                                /* Expression: width
                                         * Referenced by: '<Root>/ eta_tilde_psi'
                                         */
@@ -449,10 +454,10 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
                                         * Referenced by: '<Root>/eta_mpsi'
                                         */
 
-  /*  Expression: [7;0;0]
+  /*  Expression: [0;-1;0]
    * Referenced by: '<S5>/Integrator'
    */
-  { 7.0, 0.0, 0.0 },
+  { 0.0, -1.0, 0.0 },
   0.0,                                 /* Expression: 0
                                         * Referenced by: '<S5>/Integrator1'
                                         */
@@ -495,8 +500,80 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
   1.0,                                 /* Expression: 1
                                         * Referenced by: '<S17>/Constant1'
                                         */
-  0.1,                                 /* Expression: 0.1
+  0.02,                                /* Expression: 0.02
                                         * Referenced by: '<S17>/Gain'
+                                        */
+  -1.0,                                /* Expression: width
+                                        * Referenced by: '<S18>/x0'
+                                        */
+  1.0,                                 /* Expression: dtype
+                                        * Referenced by: '<S18>/x0'
+                                        */
+  1.0,                                 /* Expression: portnum
+                                        * Referenced by: '<S18>/x0'
+                                        */
+  -1.0,                                /* Expression: stime
+                                        * Referenced by: '<S18>/x0'
+                                        */
+  1.0,                                 /* Expression: stype
+                                        * Referenced by: '<S18>/x0'
+                                        */
+  1.0,                                 /* Expression: btype
+                                        * Referenced by: '<S18>/x0'
+                                        */
+  -1.0,                                /* Expression: width
+                                        * Referenced by: '<S18>/y0'
+                                        */
+  1.0,                                 /* Expression: dtype
+                                        * Referenced by: '<S18>/y0'
+                                        */
+  2.0,                                 /* Expression: portnum
+                                        * Referenced by: '<S18>/y0'
+                                        */
+  -1.0,                                /* Expression: stime
+                                        * Referenced by: '<S18>/y0'
+                                        */
+  1.0,                                 /* Expression: stype
+                                        * Referenced by: '<S18>/y0'
+                                        */
+  1.0,                                 /* Expression: btype
+                                        * Referenced by: '<S18>/y0'
+                                        */
+  -1.0,                                /* Expression: width
+                                        * Referenced by: '<S18>/x1'
+                                        */
+  1.0,                                 /* Expression: dtype
+                                        * Referenced by: '<S18>/x1'
+                                        */
+  3.0,                                 /* Expression: portnum
+                                        * Referenced by: '<S18>/x1'
+                                        */
+  -1.0,                                /* Expression: stime
+                                        * Referenced by: '<S18>/x1'
+                                        */
+  1.0,                                 /* Expression: stype
+                                        * Referenced by: '<S18>/x1'
+                                        */
+  1.0,                                 /* Expression: btype
+                                        * Referenced by: '<S18>/x1'
+                                        */
+  -1.0,                                /* Expression: width
+                                        * Referenced by: '<S18>/y1'
+                                        */
+  1.0,                                 /* Expression: dtype
+                                        * Referenced by: '<S18>/y1'
+                                        */
+  4.0,                                 /* Expression: portnum
+                                        * Referenced by: '<S18>/y1'
+                                        */
+  -1.0,                                /* Expression: stime
+                                        * Referenced by: '<S18>/y1'
+                                        */
+  1.0,                                 /* Expression: stype
+                                        * Referenced by: '<S18>/y1'
+                                        */
+  1.0,                                 /* Expression: btype
+                                        * Referenced by: '<S18>/y1'
                                         */
 
   /*  Expression: [0;0;0]
@@ -922,6 +999,27 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
                                         * Referenced by: '<S13>/Constant'
                                         */
   -1.0,                                /* Expression: width
+                                        * Referenced by: '<S13>/ U_vsp1'
+                                        */
+  1.0,                                 /* Expression: dtype
+                                        * Referenced by: '<S13>/ U_vsp1'
+                                        */
+  1.0,                                 /* Expression: portnum
+                                        * Referenced by: '<S13>/ U_vsp1'
+                                        */
+  -1.0,                                /* Expression: stime
+                                        * Referenced by: '<S13>/ U_vsp1'
+                                        */
+  1.0,                                 /* Expression: stype
+                                        * Referenced by: '<S13>/ U_vsp1'
+                                        */
+  0.0,                                 /* Expression: btype
+                                        * Referenced by: '<S13>/ U_vsp1'
+                                        */
+  0.0,                                 /* Expression: 0
+                                        * Referenced by: '<S13>/Constant1'
+                                        */
+  -1.0,                                /* Expression: width
                                         * Referenced by: '<S52>/control input u exceeds bounds'
                                         */
   1.0,                                 /* Expression: dtype
@@ -1064,6 +1162,24 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
                                         */
   0.0,                                 /* Expression: btype
                                         * Referenced by: '<S54>/u_VSP2'
+                                        */
+  -1.0,                                /* Expression: width
+                                        * Referenced by: '<S13>/U_vsp2'
+                                        */
+  1.0,                                 /* Expression: dtype
+                                        * Referenced by: '<S13>/U_vsp2'
+                                        */
+  2.0,                                 /* Expression: portnum
+                                        * Referenced by: '<S13>/U_vsp2'
+                                        */
+  -1.0,                                /* Expression: stime
+                                        * Referenced by: '<S13>/U_vsp2'
+                                        */
+  1.0,                                 /* Expression: stype
+                                        * Referenced by: '<S13>/U_vsp2'
+                                        */
+  0.0,                                 /* Expression: btype
+                                        * Referenced by: '<S13>/U_vsp2'
                                         */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<Root>/tau_d_y'
@@ -1608,7 +1724,7 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
   1U,                                  /* Computed Parameter: ManualSwitch_CurrentSetting
                                         * Referenced by: '<S1>/Manual Switch'
                                         */
-  0U                                   /* Computed Parameter: ManualSwitch_CurrentSetting_b
+  1U                                   /* Computed Parameter: ManualSwitch_CurrentSetting_b
                                         * Referenced by: '<Root>/Manual Switch'
                                         */
 };
@@ -1703,6 +1819,8 @@ NI_ParamSizeWidth P_ctrl_student_HIL_T_sizes[] DataSection(
 
   { sizeof(real_T), 1, 0 },
 
+  { sizeof(real_T), 3, 0 },
+
   { sizeof(real_T), 1, 0 },
 
   { sizeof(real_T), 1, 0 },
@@ -1902,6 +2020,54 @@ NI_ParamSizeWidth P_ctrl_student_HIL_T_sizes[] DataSection(
   { sizeof(real_T), 1, 0 },
 
   { sizeof(real_T), 3, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
 
   { sizeof(real_T), 1, 0 },
 
@@ -2000,6 +2166,32 @@ NI_ParamSizeWidth P_ctrl_student_HIL_T_sizes[] DataSection(
   { sizeof(real_T), 1, 0 },
 
   { sizeof(real_T), 3, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
 
   { sizeof(real_T), 1, 0 },
 

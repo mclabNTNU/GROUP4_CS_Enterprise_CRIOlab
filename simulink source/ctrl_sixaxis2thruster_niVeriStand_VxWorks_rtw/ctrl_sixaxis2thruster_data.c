@@ -9,11 +9,15 @@
 /*
  * ctrl_sixaxis2thruster_data.c
  *
+ * Academic License - for use in teaching, academic research, and meeting
+ * course requirements at degree granting institutions only.  Not for
+ * government, commercial, or other organizational use.
+ *
  * Code generation for model "ctrl_sixaxis2thruster".
  *
- * Model version              : 1.22
- * Simulink Coder version : 8.6 (R2014a) 27-Dec-2013
- * C source code generated on : Wed Feb 25 14:00:14 2015
+ * Model version              : 1.25
+ * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
+ * C source code generated on : Mon Apr 03 16:51:21 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -317,6 +321,9 @@ P_ctrl_sixaxis2thruster_T ctrl_sixaxis2thruster_P = {
   -0.8,                                /* Expression: -0.8
                                         * Referenced by: '<S3>/Saturation'
                                         */
+  0.0,                                 /* Expression: 0
+                                        * Referenced by: '<Root>/Gain1'
+                                        */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<Root>/omega_VSP1'
                                         */
@@ -369,6 +376,8 @@ typedef struct {
 NI_ParamSizeWidth P_ctrl_sixaxis2thruster_T_sizes[] DataSection(
   ".NIVS.defaultparamsizes") = {
   { sizeof(P_ctrl_sixaxis2thruster_T), 1 },
+
+  { sizeof(real_T), 1, 0 },
 
   { sizeof(real_T), 1, 0 },
 
