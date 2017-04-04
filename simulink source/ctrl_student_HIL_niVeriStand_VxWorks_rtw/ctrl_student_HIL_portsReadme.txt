@@ -59,6 +59,9 @@
 <outport> id = "-1" name = "eta_mpsi" width = "1" datatype = "0"</outport>
 <outport> id = "-1" name = "tau_d_psi" width = "1" datatype = "18"</outport>
 <outport> id = "-1" name = "tau_d_x" width = "1" datatype = "18"</outport>
+<outport> id = "-1" name = "tau_d_y" width = "1" datatype = "18"</outport>
+<outport> id = "-1" name = "tau_psi_rev" width = "1" datatype = "0"</outport>
+<outport> id = "-1" name = "tau_x_rev" width = "1" datatype = "0"</outport>
 <outport> id = "-1" name = "eta_d to veristand/eta_d_PSI" width = "1" datatype = "18"</outport>
 <outport> id = "-1" name = "eta_d to veristand/eta_d_X" width = "1" datatype = "18"</outport>
 <outport> id = "-1" name = "eta_d to veristand/eta_d_Y" width = "1" datatype = "18"</outport>
@@ -72,7 +75,7 @@
 <outport> id = "-1" name = "tau to real ship (only use in MCLab)/To thruster of real ship/u/u_VSP1" width = "1" datatype = "0"</outport>
 <outport> id = "-1" name = "tau to real ship (only use in MCLab)/To thruster of real ship/u/u_VSP2" width = "1" datatype = "0"</outport>
 <outport> id = "-1" name = "tau to real ship (only use in MCLab)/U_vsp2" width = "1" datatype = "0"</outport>
-<outport> id = "-1" name = "tau_d_y" width = "1" datatype = "18"</outport>
+<outport> id = "-1" name = "tau_y_rev" width = "1" datatype = "0"</outport>
 <outport> id = "-1" name = "Controller/z1_psi" width = "1" datatype = "18"</outport>
 <outport> id = "-1" name = "Controller/z1_x" width = "1" datatype = "18"</outport>
 <outport> id = "-1" name = "Controller/z1_y" width = "1" datatype = "18"</outport>

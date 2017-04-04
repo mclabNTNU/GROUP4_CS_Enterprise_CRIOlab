@@ -10,7 +10,7 @@
 				<String>CSE1</String>
 			</Property>
 			<Property Name="Version">
-				<String>1.0.0.200</String>
+				<String>1.0.0.214</String>
 			</Property>
 			<Property Name="Creator">
 				<String />
@@ -1400,10 +1400,10 @@
 									<Double>10000</Double>
 								</Property>
 								<Property Name="DLL Size">
-									<I32>136560</I32>
+									<I32>136584</I32>
 								</Property>
 								<Property Name="DLL Timestamp">
-									<Double>3573950500</Double>
+									<Double>3574138154.6838984</Double>
 								</Property>
 								<Property Name="Decimation">
 									<I32>1</I32>
@@ -1447,7 +1447,7 @@
 										<ForceDownload>false</ForceDownload>
 										<RTDestination>c:\ni-rt\system\ctrl_sixaxis2thruster.out</RTDestination>
 										<SupportedTarget>VxWorks</SupportedTarget>
-										<MD5>ad77c5384460ade7969cee5ff269db72</MD5>
+										<MD5>77731d0c51ed25ae32d59abdfc73b0d4</MD5>
 									</DependentFile>
 								</Property>
 								<Property Name="GlobalParameterScopes">
@@ -5353,10 +5353,10 @@
 									<Double>10000</Double>
 								</Property>
 								<Property Name="DLL Size">
-									<I32>298143</I32>
+									<I32>302793</I32>
 								</Property>
 								<Property Name="DLL Timestamp">
-									<Double>3574075638.5586429</Double>
+									<Double>3574147581.8320847</Double>
 								</Property>
 								<Property Name="Decimation">
 									<I32>1</I32>
@@ -5400,7 +5400,7 @@
 										<ForceDownload>false</ForceDownload>
 										<RTDestination>c:\ni-rt\system\ctrl_student_HIL.out</RTDestination>
 										<SupportedTarget>VxWorks</SupportedTarget>
-										<MD5>728ac270153291d26318cacebf3524b9</MD5>
+										<MD5>cef524148eb8d7b8b6979841b613005f</MD5>
 									</DependentFile>
 								</Property>
 								<Property Name="GlobalParameterScopes">
@@ -6195,7 +6195,7 @@
 												<String>eta_d to veristand/eta_d_PSI</String>
 											</Property>
 											<Property Name="Index">
-												<I32>60</I32>
+												<I32>63</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6210,7 +6210,7 @@
 												<String>eta_d to veristand/eta_d_X</String>
 											</Property>
 											<Property Name="Index">
-												<I32>61</I32>
+												<I32>64</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6225,7 +6225,7 @@
 												<String>eta_d to veristand/eta_d_Y</String>
 											</Property>
 											<Property Name="Index">
-												<I32>62</I32>
+												<I32>65</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6355,7 +6355,7 @@
 												<String>Controller/z1_psi</String>
 											</Property>
 											<Property Name="Index">
-												<I32>74</I32>
+												<I32>77</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6370,7 +6370,7 @@
 												<String>Controller/z1_x</String>
 											</Property>
 											<Property Name="Index">
-												<I32>75</I32>
+												<I32>78</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6385,7 +6385,7 @@
 												<String>Controller/z1_y</String>
 											</Property>
 											<Property Name="Index">
-												<I32>76</I32>
+												<I32>79</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6409,7 +6409,7 @@
 													<String>Observer/nu_hat_out/ nu_x_hat</String>
 												</Property>
 												<Property Name="Index">
-													<I32>82</I32>
+													<I32>85</I32>
 												</Property>
 											</Properties>
 											<Errors />
@@ -6424,7 +6424,7 @@
 													<String>Observer/nu_hat_out/ nu_y_hat</String>
 												</Property>
 												<Property Name="Index">
-													<I32>83</I32>
+													<I32>86</I32>
 												</Property>
 											</Properties>
 											<Errors />
@@ -6439,7 +6439,7 @@
 													<String>Observer/nu_hat_out/nu_psi_hat</String>
 												</Property>
 												<Property Name="Index">
-													<I32>84</I32>
+													<I32>87</I32>
 												</Property>
 											</Properties>
 											<Errors />
@@ -6455,7 +6455,7 @@
 												<String>Observer/bias_x</String>
 											</Property>
 											<Property Name="Index">
-												<I32>79</I32>
+												<I32>82</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6470,7 +6470,7 @@
 												<String>Observer/bias_y</String>
 											</Property>
 											<Property Name="Index">
-												<I32>80</I32>
+												<I32>83</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6485,7 +6485,7 @@
 												<String>Observer/bias_psi</String>
 											</Property>
 											<Property Name="Index">
-												<I32>81</I32>
+												<I32>84</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6505,7 +6505,7 @@
 												<String>Signal Drop-out/eta_mpsi</String>
 											</Property>
 											<Property Name="Index">
-												<I32>85</I32>
+												<I32>88</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6520,7 +6520,7 @@
 												<String>Signal Drop-out/eta_mx</String>
 											</Property>
 											<Property Name="Index">
-												<I32>86</I32>
+												<I32>89</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6535,7 +6535,7 @@
 												<String>Signal Drop-out/eta_my</String>
 											</Property>
 											<Property Name="Index">
-												<I32>87</I32>
+												<I32>90</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6560,7 +6560,7 @@
 												<String>Guidance/s</String>
 											</Property>
 											<Property Name="Index">
-												<I32>77</I32>
+												<I32>80</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6575,7 +6575,7 @@
 												<String>Guidance/s_dot</String>
 											</Property>
 											<Property Name="Index">
-												<I32>78</I32>
+												<I32>81</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6603,7 +6603,7 @@
 														<String>tau to real ship (only use in MCLab)/To thruster of real ship/u/alpha_VSP1</String>
 													</Property>
 													<Property Name="Index">
-														<I32>65</I32>
+														<I32>68</I32>
 													</Property>
 												</Properties>
 												<Errors />
@@ -6618,7 +6618,7 @@
 														<String>tau to real ship (only use in MCLab)/To thruster of real ship/u/alpha_VSP2</String>
 													</Property>
 													<Property Name="Index">
-														<I32>66</I32>
+														<I32>69</I32>
 													</Property>
 												</Properties>
 												<Errors />
@@ -6633,7 +6633,7 @@
 														<String>tau to real ship (only use in MCLab)/To thruster of real ship/u/omega_VSP1</String>
 													</Property>
 													<Property Name="Index">
-														<I32>67</I32>
+														<I32>70</I32>
 													</Property>
 												</Properties>
 												<Errors />
@@ -6648,7 +6648,7 @@
 														<String>tau to real ship (only use in MCLab)/To thruster of real ship/u/omega_VSP2</String>
 													</Property>
 													<Property Name="Index">
-														<I32>68</I32>
+														<I32>71</I32>
 													</Property>
 												</Properties>
 												<Errors />
@@ -6663,7 +6663,7 @@
 														<String>tau to real ship (only use in MCLab)/To thruster of real ship/u/u_BT</String>
 													</Property>
 													<Property Name="Index">
-														<I32>69</I32>
+														<I32>72</I32>
 													</Property>
 												</Properties>
 												<Errors />
@@ -6678,7 +6678,7 @@
 														<String>tau to real ship (only use in MCLab)/To thruster of real ship/u/u_VSP1</String>
 													</Property>
 													<Property Name="Index">
-														<I32>70</I32>
+														<I32>73</I32>
 													</Property>
 												</Properties>
 												<Errors />
@@ -6693,7 +6693,7 @@
 														<String>tau to real ship (only use in MCLab)/To thruster of real ship/u/u_VSP2</String>
 													</Property>
 													<Property Name="Index">
-														<I32>71</I32>
+														<I32>74</I32>
 													</Property>
 												</Properties>
 												<Errors />
@@ -6709,7 +6709,7 @@
 													<String>tau to real ship (only use in MCLab)/To thruster of real ship/control input u exceeds bounds</String>
 												</Property>
 												<Property Name="Index">
-													<I32>64</I32>
+													<I32>67</I32>
 												</Property>
 											</Properties>
 											<Errors />
@@ -6725,7 +6725,7 @@
 												<String>tau to real ship (only use in MCLab)/ U_vsp1</String>
 											</Property>
 											<Property Name="Index">
-												<I32>63</I32>
+												<I32>66</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6740,7 +6740,7 @@
 												<String>tau to real ship (only use in MCLab)/U_vsp2</String>
 											</Property>
 											<Property Name="Index">
-												<I32>72</I32>
+												<I32>75</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6921,7 +6921,52 @@
 											<String>tau_d_y</String>
 										</Property>
 										<Property Name="Index">
-											<I32>73</I32>
+											<I32>60</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="tau_psi_rev" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>tau_psi_rev</String>
+										</Property>
+										<Property Name="Index">
+											<I32>61</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="tau_x_rev" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>tau_x_rev</String>
+										</Property>
+										<Property Name="Index">
+											<I32>62</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="tau_y_rev" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>tau_y_rev</String>
+										</Property>
+										<Property Name="Index">
+											<I32>76</I32>
 										</Property>
 									</Properties>
 									<Errors />

@@ -7,9 +7,9 @@
  *
  * Code generation for model "ctrl_sixaxis2thruster".
  *
- * Model version              : 1.25
+ * Model version              : 1.26
  * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
- * C source code generated on : Mon Apr 03 16:51:21 2017
+ * C source code generated on : Tue Apr 04 10:09:08 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -818,7 +818,6 @@ typedef struct {
   real_T Gain;                         /* '<Root>/Gain' */
   real_T ArrowDown;                    /* '<Root>/ArrowDown' */
   real_T Saturation_n;                 /* '<S3>/Saturation' */
-  real_T Gain1;                        /* '<Root>/Gain1' */
 } B_ctrl_sixaxis2thruster_T;
 
 /* Block states (auto storage) for system '<Root>' */
@@ -1164,9 +1163,6 @@ struct P_ctrl_sixaxis2thruster_T_ {
                                         */
   real_T Saturation_LowerSat_o;        /* Expression: -0.8
                                         * Referenced by: '<S3>/Saturation'
-                                        */
-  real_T Gain1_Gain;                   /* Expression: 0
-                                        * Referenced by: '<Root>/Gain1'
                                         */
   real_T omega_VSP1_P1;                /* Expression: width
                                         * Referenced by: '<Root>/omega_VSP1'

@@ -7,9 +7,9 @@
  *
  * Code generation for model "ctrl_student_HIL".
  *
- * Model version              : 1.319
+ * Model version              : 1.330
  * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
- * C source code generated on : Mon Apr 03 16:47:02 2017
+ * C source code generated on : Tue Apr 04 12:46:08 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -865,6 +865,9 @@ typedef struct {
   real_T ArrowLeft;                    /* '<S10>/ArrowLeft' */
   real_T ArrowRight;                   /* '<S10>/ArrowRight' */
   real_T ManualSwitch[3];              /* '<Root>/Manual Switch' */
+  real_T Sum1;                         /* '<Root>/Sum1' */
+  real_T Gain7;                        /* '<Root>/Gain7' */
+  real_T Gain6;                        /* '<Root>/Gain6' */
   real_T MatrixMultiply[3];            /* '<S5>/Matrix Multiply' */
   real_T L1_11;                        /* '<S4>/L1_11' */
   real_T L1_22;                        /* '<S4>/L1_22' */
@@ -877,7 +880,7 @@ typedef struct {
   real_T L3_33;                        /* '<S4>/L3_33' */
   real_T MatrixMultiply9[3];           /* '<S33>/Matrix Multiply9' */
   real_T MatrixMultiply4[3];           /* '<S7>/Matrix Multiply4' */
-  real_T Sum1[3];                      /* '<S7>/Sum1' */
+  real_T Sum1_n[3];                    /* '<S7>/Sum1' */
   real_T y_in;                         /* '<S3>/y_in' */
   real_T psi_in;                       /* '<S3>/psi_in' */
   real_T x_in;                         /* '<S3>/x_in' */
@@ -951,6 +954,9 @@ typedef struct {
   real_T ArrowRight_DWORK1;            /* '<S10>/ArrowRight' */
   real_T tau_d_psi_DWORK1;             /* '<Root>/tau_d_psi' */
   real_T tau_d_x_DWORK1;               /* '<Root>/tau_d_x' */
+  real_T tau_d_y_DWORK1;               /* '<Root>/tau_d_y' */
+  real_T tau_psi_rev_DWORK1;           /* '<Root>/tau_psi_rev' */
+  real_T tau_x_rev_DWORK1;             /* '<Root>/tau_x_rev' */
   real_T eta_d_PSI_DWORK1;             /* '<S9>/eta_d_PSI' */
   real_T eta_d_X_DWORK1;               /* '<S9>/eta_d_X' */
   real_T eta_d_Y_DWORK1;               /* '<S9>/eta_d_Y' */
@@ -964,7 +970,7 @@ typedef struct {
   real_T u_VSP1_DWORK1;                /* '<S54>/u_VSP1' */
   real_T u_VSP2_DWORK1;                /* '<S54>/u_VSP2' */
   real_T U_vsp2_DWORK1;                /* '<S13>/U_vsp2' */
-  real_T tau_d_y_DWORK1;               /* '<Root>/tau_d_y' */
+  real_T tau_y_rev_DWORK1;             /* '<Root>/tau_y_rev' */
   real_T z1_psi_DWORK1;                /* '<S1>/z1_psi' */
   real_T z1_x_DWORK1;                  /* '<S1>/z1_x' */
   real_T z1_y_DWORK1;                  /* '<S1>/z1_y' */
@@ -1043,6 +1049,9 @@ typedef struct {
   uint8_T ArrowRight_DWORK2[17];       /* '<S10>/ArrowRight' */
   uint8_T tau_d_psi_DWORK2[17];        /* '<Root>/tau_d_psi' */
   uint8_T tau_d_x_DWORK2[17];          /* '<Root>/tau_d_x' */
+  uint8_T tau_d_y_DWORK2[17];          /* '<Root>/tau_d_y' */
+  uint8_T tau_psi_rev_DWORK2[17];      /* '<Root>/tau_psi_rev' */
+  uint8_T tau_x_rev_DWORK2[17];        /* '<Root>/tau_x_rev' */
   uint8_T eta_d_PSI_DWORK2[17];        /* '<S9>/eta_d_PSI' */
   uint8_T eta_d_X_DWORK2[17];          /* '<S9>/eta_d_X' */
   uint8_T eta_d_Y_DWORK2[17];          /* '<S9>/eta_d_Y' */
@@ -1056,7 +1065,7 @@ typedef struct {
   uint8_T u_VSP1_DWORK2[17];           /* '<S54>/u_VSP1' */
   uint8_T u_VSP2_DWORK2[17];           /* '<S54>/u_VSP2' */
   uint8_T U_vsp2_DWORK2[17];           /* '<S13>/U_vsp2' */
-  uint8_T tau_d_y_DWORK2[17];          /* '<Root>/tau_d_y' */
+  uint8_T tau_y_rev_DWORK2[17];        /* '<Root>/tau_y_rev' */
   uint8_T z1_psi_DWORK2[17];           /* '<S1>/z1_psi' */
   uint8_T z1_x_DWORK2[17];             /* '<S1>/z1_x' */
   uint8_T z1_y_DWORK2[17];             /* '<S1>/z1_y' */
@@ -2042,6 +2051,66 @@ struct P_ctrl_student_HIL_T_ {
   real_T tau_d_x_P6;                   /* Expression: btype
                                         * Referenced by: '<Root>/tau_d_x'
                                         */
+  real_T tau_d_y_P1;                   /* Expression: width
+                                        * Referenced by: '<Root>/tau_d_y'
+                                        */
+  real_T tau_d_y_P2;                   /* Expression: dtype
+                                        * Referenced by: '<Root>/tau_d_y'
+                                        */
+  real_T tau_d_y_P3;                   /* Expression: portnum
+                                        * Referenced by: '<Root>/tau_d_y'
+                                        */
+  real_T tau_d_y_P4;                   /* Expression: stime
+                                        * Referenced by: '<Root>/tau_d_y'
+                                        */
+  real_T tau_d_y_P5;                   /* Expression: stype
+                                        * Referenced by: '<Root>/tau_d_y'
+                                        */
+  real_T tau_d_y_P6;                   /* Expression: btype
+                                        * Referenced by: '<Root>/tau_d_y'
+                                        */
+  real_T Constant_Value_k;             /* Expression: pi
+                                        * Referenced by: '<Root>/Constant'
+                                        */
+  real_T tau_psi_rev_P1;               /* Expression: width
+                                        * Referenced by: '<Root>/tau_psi_rev'
+                                        */
+  real_T tau_psi_rev_P2;               /* Expression: dtype
+                                        * Referenced by: '<Root>/tau_psi_rev'
+                                        */
+  real_T tau_psi_rev_P3;               /* Expression: portnum
+                                        * Referenced by: '<Root>/tau_psi_rev'
+                                        */
+  real_T tau_psi_rev_P4;               /* Expression: stime
+                                        * Referenced by: '<Root>/tau_psi_rev'
+                                        */
+  real_T tau_psi_rev_P5;               /* Expression: stype
+                                        * Referenced by: '<Root>/tau_psi_rev'
+                                        */
+  real_T tau_psi_rev_P6;               /* Expression: btype
+                                        * Referenced by: '<Root>/tau_psi_rev'
+                                        */
+  real_T Gain7_Gain;                   /* Expression: -1
+                                        * Referenced by: '<Root>/Gain7'
+                                        */
+  real_T tau_x_rev_P1;                 /* Expression: width
+                                        * Referenced by: '<Root>/tau_x_rev'
+                                        */
+  real_T tau_x_rev_P2;                 /* Expression: dtype
+                                        * Referenced by: '<Root>/tau_x_rev'
+                                        */
+  real_T tau_x_rev_P3;                 /* Expression: portnum
+                                        * Referenced by: '<Root>/tau_x_rev'
+                                        */
+  real_T tau_x_rev_P4;                 /* Expression: stime
+                                        * Referenced by: '<Root>/tau_x_rev'
+                                        */
+  real_T tau_x_rev_P5;                 /* Expression: stype
+                                        * Referenced by: '<Root>/tau_x_rev'
+                                        */
+  real_T tau_x_rev_P6;                 /* Expression: btype
+                                        * Referenced by: '<Root>/tau_x_rev'
+                                        */
   real_T eta_d_PSI_P1;                 /* Expression: width
                                         * Referenced by: '<S9>/eta_d_PSI'
                                         */
@@ -2098,6 +2167,9 @@ struct P_ctrl_student_HIL_T_ {
                                         */
   real_T Constant_Value_g;             /* Expression: 1
                                         * Referenced by: '<S13>/Constant'
+                                        */
+  real_T Gain6_Gain;                   /* Expression: -1
+                                        * Referenced by: '<Root>/Gain6'
                                         */
   real_T U_vsp1_P1;                    /* Expression: width
                                         * Referenced by: '<S13>/ U_vsp1'
@@ -2282,23 +2354,23 @@ struct P_ctrl_student_HIL_T_ {
   real_T U_vsp2_P6;                    /* Expression: btype
                                         * Referenced by: '<S13>/U_vsp2'
                                         */
-  real_T tau_d_y_P1;                   /* Expression: width
-                                        * Referenced by: '<Root>/tau_d_y'
+  real_T tau_y_rev_P1;                 /* Expression: width
+                                        * Referenced by: '<Root>/tau_y_rev'
                                         */
-  real_T tau_d_y_P2;                   /* Expression: dtype
-                                        * Referenced by: '<Root>/tau_d_y'
+  real_T tau_y_rev_P2;                 /* Expression: dtype
+                                        * Referenced by: '<Root>/tau_y_rev'
                                         */
-  real_T tau_d_y_P3;                   /* Expression: portnum
-                                        * Referenced by: '<Root>/tau_d_y'
+  real_T tau_y_rev_P3;                 /* Expression: portnum
+                                        * Referenced by: '<Root>/tau_y_rev'
                                         */
-  real_T tau_d_y_P4;                   /* Expression: stime
-                                        * Referenced by: '<Root>/tau_d_y'
+  real_T tau_y_rev_P4;                 /* Expression: stime
+                                        * Referenced by: '<Root>/tau_y_rev'
                                         */
-  real_T tau_d_y_P5;                   /* Expression: stype
-                                        * Referenced by: '<Root>/tau_d_y'
+  real_T tau_y_rev_P5;                 /* Expression: stype
+                                        * Referenced by: '<Root>/tau_y_rev'
                                         */
-  real_T tau_d_y_P6;                   /* Expression: btype
-                                        * Referenced by: '<Root>/tau_d_y'
+  real_T tau_y_rev_P6;                 /* Expression: btype
+                                        * Referenced by: '<Root>/tau_y_rev'
                                         */
   real_T z1_psi_P1;                    /* Expression: width
                                         * Referenced by: '<S1>/z1_psi'
