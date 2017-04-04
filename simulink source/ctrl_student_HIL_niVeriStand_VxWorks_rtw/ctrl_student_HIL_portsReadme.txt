@@ -60,11 +60,11 @@
 <outport> id = "-1" name = "tau_d_psi" width = "1" datatype = "18"</outport>
 <outport> id = "-1" name = "tau_d_x" width = "1" datatype = "18"</outport>
 <outport> id = "-1" name = "tau_d_y" width = "1" datatype = "18"</outport>
-<outport> id = "-1" name = "tau_psi_rev" width = "1" datatype = "0"</outport>
+<outport> id = "-1" name = "tau_psi_rev" width = "1" datatype = "18"</outport>
 <outport> id = "-1" name = "tau_x_rev" width = "1" datatype = "0"</outport>
 <outport> id = "-1" name = "eta_d to veristand/eta_d_PSI" width = "1" datatype = "18"</outport>
 <outport> id = "-1" name = "eta_d to veristand/eta_d_X" width = "1" datatype = "18"</outport>
-<outport> id = "-1" name = "eta_d to veristand/eta_d_Y" width = "1" datatype = "18"</outport>
+<outport> id = "-1" name = "eta_d to veristand/eta_d_Y" width = "1" datatype = "0"</outport>
 <outport> id = "-1" name = "tau to real ship (only use in MCLab)/ U_vsp1" width = "1" datatype = "0"</outport>
 <outport> id = "-1" name = "tau to real ship (only use in MCLab)/To thruster of real ship/control input u exceeds bounds" width = "1" datatype = "8"</outport>
 <outport> id = "-1" name = "tau to real ship (only use in MCLab)/To thruster of real ship/u/alpha_VSP1" width = "1" datatype = "0"</outport>

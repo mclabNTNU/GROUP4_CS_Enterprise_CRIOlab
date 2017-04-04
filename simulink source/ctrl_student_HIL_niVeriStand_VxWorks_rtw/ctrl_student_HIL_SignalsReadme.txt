@@ -47,25 +47,25 @@
 <signal> id = "46" name = "ctrl_student_hil/Observer/Integrator1" SignalName ="(1,1)" PortNum ="1" width = "1" datatype = "real_T"</signal>
 <signal> id = "47" name = "ctrl_student_hil/Observer/Integrator1" SignalName ="(1,2)" PortNum ="1" width = "1" datatype = "real_T"</signal>
 <signal> id = "48" name = "ctrl_student_hil/Observer/Integrator1" SignalName ="(1,3)" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "49" name = "ctrl_student_hil/Observer/Bias estimator/Matrix Multiply2" SignalName ="(1,1)" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "50" name = "ctrl_student_hil/Observer/Bias estimator/Matrix Multiply2" SignalName ="(1,2)" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "51" name = "ctrl_student_hil/Observer/Bias estimator/Matrix Multiply2" SignalName ="(1,3)" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "52" name = "ctrl_student_hil/joystick/L2_continuous" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "53" name = "ctrl_student_hil/joystick/PosXRight" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "54" name = "ctrl_student_hil/joystick/PosYRight" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "55" name = "ctrl_student_hil/joystick/R2_continuous" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "56" name = "ctrl_student_hil/joystick/PosXLeft" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "57" name = "ctrl_student_hil/joystick/PosYLeft" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "58" name = "ctrl_student_hil/joystick/L1" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "59" name = "ctrl_student_hil/joystick/R1" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "60" name = "ctrl_student_hil/joystick/ArrowDown" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "61" name = "ctrl_student_hil/joystick/ArrowUp" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "62" name = "ctrl_student_hil/joystick/ArrowLeft" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "63" name = "ctrl_student_hil/joystick/ArrowRight" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "64" name = "ctrl_student_hil/Manual Switch" SignalName ="(1,1)" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "65" name = "ctrl_student_hil/Manual Switch" SignalName ="(1,2)" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "66" name = "ctrl_student_hil/Manual Switch" SignalName ="(1,3)" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "67" name = "ctrl_student_hil/Sum1" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "49" name = "ctrl_student_hil/Sum3" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "50" name = "ctrl_student_hil/Observer/Bias estimator/Matrix Multiply2" SignalName ="(1,1)" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "51" name = "ctrl_student_hil/Observer/Bias estimator/Matrix Multiply2" SignalName ="(1,2)" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "52" name = "ctrl_student_hil/Observer/Bias estimator/Matrix Multiply2" SignalName ="(1,3)" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "53" name = "ctrl_student_hil/joystick/L2_continuous" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "54" name = "ctrl_student_hil/joystick/PosXRight" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "55" name = "ctrl_student_hil/joystick/PosYRight" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "56" name = "ctrl_student_hil/joystick/R2_continuous" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "57" name = "ctrl_student_hil/joystick/PosXLeft" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "58" name = "ctrl_student_hil/joystick/PosYLeft" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "59" name = "ctrl_student_hil/joystick/L1" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "60" name = "ctrl_student_hil/joystick/R1" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "61" name = "ctrl_student_hil/joystick/ArrowDown" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "62" name = "ctrl_student_hil/joystick/ArrowUp" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "63" name = "ctrl_student_hil/joystick/ArrowLeft" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "64" name = "ctrl_student_hil/joystick/ArrowRight" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "65" name = "ctrl_student_hil/Manual Switch" SignalName ="(1,1)" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "66" name = "ctrl_student_hil/Manual Switch" SignalName ="(1,2)" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "67" name = "ctrl_student_hil/Manual Switch" SignalName ="(1,3)" PortNum ="1" width = "1" datatype = "real_T"</signal>
 <signal> id = "68" name = "ctrl_student_hil/Gain7" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
 <signal> id = "69" name = "ctrl_student_hil/Gain6" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
 <signal> id = "70" name = "ctrl_student_hil/Guidance/Matrix Multiply" SignalName ="(1,1)" PortNum ="1" width = "1" datatype = "real_T"</signal>
@@ -95,20 +95,18 @@
 <signal> id = "94" name = "ctrl_student_hil/From model/r_in" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
 <signal> id = "95" name = "ctrl_student_hil/From model/u_in" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
 <signal> id = "96" name = "ctrl_student_hil/From model/v_in" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "97" name = "ctrl_student_hil/tau to real ship (only use in MCLab)/Thrust Allocation 2x VSP" SignalName ="U_vsp1" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "98" name = "ctrl_student_hil/tau to real ship (only use in MCLab)/Thrust Allocation 2x VSP" SignalName ="U_vsp2" PortNum ="2" width = "1" datatype = "real_T"</signal>
-<signal> id = "99" name = "ctrl_student_hil/tau to real ship (only use in MCLab)/Thrust Allocation 2x VSP" SignalName ="alpha1" PortNum ="3" width = "1" datatype = "real_T"</signal>
-<signal> id = "100" name = "ctrl_student_hil/tau to real ship (only use in MCLab)/Thrust Allocation 2x VSP" SignalName ="alpha2" PortNum ="4" width = "1" datatype = "real_T"</signal>
-<signal> id = "101" name = "ctrl_student_hil/tau to real ship (only use in MCLab)/Thrust Allocation 2x VSP" SignalName ="omega" PortNum ="5" width = "1" datatype = "real_T"</signal>
-<signal> id = "102" name = "ctrl_student_hil/Signal Drop-out/Signal drop-out simulation" SignalName ="eta_m_out(1,1)" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "103" name = "ctrl_student_hil/Signal Drop-out/Signal drop-out simulation" SignalName ="eta_m_out(1,2)" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "104" name = "ctrl_student_hil/Signal Drop-out/Signal drop-out simulation" SignalName ="eta_m_out(1,3)" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "105" name = "ctrl_student_hil/Signal Drop-out/Detection/MATLAB Function" SignalName ="eta_m_c1(1,1)" PortNum ="2" width = "1" datatype = "real_T"</signal>
-<signal> id = "106" name = "ctrl_student_hil/Signal Drop-out/Detection/MATLAB Function" SignalName ="eta_m_c1(1,2)" PortNum ="2" width = "1" datatype = "real_T"</signal>
-<signal> id = "107" name = "ctrl_student_hil/Signal Drop-out/Detection/MATLAB Function" SignalName ="eta_m_c1(1,3)" PortNum ="2" width = "1" datatype = "real_T"</signal>
-<signal> id = "108" name = "ctrl_student_hil/Guidance/s_dot generation/s calculation" SignalName ="s_dot" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "109" name = "ctrl_student_hil/Controller/MATLAB Function" SignalName ="z1_inertial(1,1)" PortNum ="2" width = "1" datatype = "real_T"</signal>
-<signal> id = "110" name = "ctrl_student_hil/Controller/MATLAB Function" SignalName ="z1_inertial(1,2)" PortNum ="2" width = "1" datatype = "real_T"</signal>
-<signal> id = "111" name = "ctrl_student_hil/Controller/MATLAB Function" SignalName ="z1_inertial(1,3)" PortNum ="2" width = "1" datatype = "real_T"</signal>
-<signal> id = "112" name = "ctrl_student_hil/tau to real ship (only use in MCLab)/To thruster of real ship/control limit checking" SignalName ="fault" PortNum ="1" width = "1" datatype = "boolean_T"</signal>
+<signal> id = "97" name = "ctrl_student_hil/tau to real ship (only use in MCLab)/Full thrust allocation X&Y" SignalName ="u_VSP" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "98" name = "ctrl_student_hil/tau to real ship (only use in MCLab)/Full thrust allocation X&Y" SignalName ="alpha_VSP" PortNum ="2" width = "1" datatype = "real_T"</signal>
+<signal> id = "99" name = "ctrl_student_hil/tau to real ship (only use in MCLab)/Full thrust allocation X&Y" SignalName ="omega_VSP" PortNum ="3" width = "1" datatype = "real_T"</signal>
+<signal> id = "100" name = "ctrl_student_hil/Signal Drop-out/Signal drop-out simulation" SignalName ="eta_m_out(1,1)" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "101" name = "ctrl_student_hil/Signal Drop-out/Signal drop-out simulation" SignalName ="eta_m_out(1,2)" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "102" name = "ctrl_student_hil/Signal Drop-out/Signal drop-out simulation" SignalName ="eta_m_out(1,3)" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "103" name = "ctrl_student_hil/Signal Drop-out/Detection/MATLAB Function" SignalName ="eta_m_c1(1,1)" PortNum ="2" width = "1" datatype = "real_T"</signal>
+<signal> id = "104" name = "ctrl_student_hil/Signal Drop-out/Detection/MATLAB Function" SignalName ="eta_m_c1(1,2)" PortNum ="2" width = "1" datatype = "real_T"</signal>
+<signal> id = "105" name = "ctrl_student_hil/Signal Drop-out/Detection/MATLAB Function" SignalName ="eta_m_c1(1,3)" PortNum ="2" width = "1" datatype = "real_T"</signal>
+<signal> id = "106" name = "ctrl_student_hil/Guidance/s_dot generation/s calculation" SignalName ="s_dot" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "107" name = "ctrl_student_hil/Controller/MATLAB Function" SignalName ="z1_inertial(1,1)" PortNum ="2" width = "1" datatype = "real_T"</signal>
+<signal> id = "108" name = "ctrl_student_hil/Controller/MATLAB Function" SignalName ="z1_inertial(1,2)" PortNum ="2" width = "1" datatype = "real_T"</signal>
+<signal> id = "109" name = "ctrl_student_hil/Controller/MATLAB Function" SignalName ="z1_inertial(1,3)" PortNum ="2" width = "1" datatype = "real_T"</signal>
+<signal> id = "110" name = "ctrl_student_hil/tau to real ship (only use in MCLab)/To thruster of real ship/control limit checking" SignalName ="fault" PortNum ="1" width = "1" datatype = "boolean_T"</signal>
 </signallist>

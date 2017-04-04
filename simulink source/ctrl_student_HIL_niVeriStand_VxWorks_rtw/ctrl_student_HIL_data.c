@@ -15,9 +15,9 @@
  *
  * Code generation for model "ctrl_student_HIL".
  *
- * Model version              : 1.330
+ * Model version              : 1.340
  * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
- * C source code generated on : Tue Apr 04 12:46:08 2017
+ * C source code generated on : Tue Apr 04 16:45:16 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -454,10 +454,10 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
                                         * Referenced by: '<Root>/eta_mpsi'
                                         */
 
-  /*  Expression: [0;-1;0]
+  /*  Expression: [5;0;0]
    * Referenced by: '<S5>/Integrator'
    */
-  { 0.0, -1.0, 0.0 },
+  { 5.0, 0.0, 0.0 },
   0.0,                                 /* Expression: 0
                                         * Referenced by: '<S5>/Integrator1'
                                         */
@@ -618,10 +618,10 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
    */
   { 1.0E-7, 1.0E-7, 1.0E-7 },
 
-  /*  Expression: [0.2 0 0;0 0.2 0;0 0 0.1]
+  /*  Expression: [0.02 0 0;0 0.02 0;0 0 0.01]
    * Referenced by: '<S17>/Constant'
    */
-  { 0.2, 0.0, 0.0, 0.0, 0.2, 0.0, 0.0, 0.0, 0.1 },
+  { 0.02, 0.0, 0.0, 0.0, 0.02, 0.0, 0.0, 0.0, 0.01 },
   -1.0,                                /* Expression: width
                                         * Referenced by: '<S4>/K_p2_1'
                                         */
@@ -681,6 +681,9 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
    * Referenced by: '<S7>/Integrator1'
    */
   { 0.0, 0.0, 0.0 },
+  0.0,                                 /* Expression: 0
+                                        * Referenced by: '<Root>/Gain5'
+                                        */
   0.0,                                 /* Expression: 0
                                         * Referenced by: '<S33>/Integrator'
                                         */
@@ -959,9 +962,6 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
   0.0,                                 /* Expression: btype
                                         * Referenced by: '<Root>/tau_d_y'
                                         */
-  3.1415926535897931,                  /* Expression: pi
-                                        * Referenced by: '<Root>/Constant'
-                                        */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<Root>/tau_psi_rev'
                                         */
@@ -980,7 +980,7 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
   0.0,                                 /* Expression: btype
                                         * Referenced by: '<Root>/tau_psi_rev'
                                         */
-  -1.0,                                /* Expression: -1
+  1.0,                                 /* Expression: 1
                                         * Referenced by: '<Root>/Gain7'
                                         */
   -1.0,                                /* Expression: width
@@ -1058,9 +1058,6 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
   1.0,                                 /* Expression: 1
                                         * Referenced by: '<S13>/Constant'
                                         */
-  -1.0,                                /* Expression: -1
-                                        * Referenced by: '<Root>/Gain6'
-                                        */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<S13>/ U_vsp1'
                                         */
@@ -1083,148 +1080,148 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
                                         * Referenced by: '<S13>/Constant1'
                                         */
   -1.0,                                /* Expression: width
-                                        * Referenced by: '<S52>/control input u exceeds bounds'
+                                        * Referenced by: '<S53>/control input u exceeds bounds'
                                         */
   1.0,                                 /* Expression: dtype
-                                        * Referenced by: '<S52>/control input u exceeds bounds'
+                                        * Referenced by: '<S53>/control input u exceeds bounds'
                                         */
   1.0,                                 /* Expression: portnum
-                                        * Referenced by: '<S52>/control input u exceeds bounds'
+                                        * Referenced by: '<S53>/control input u exceeds bounds'
                                         */
   -1.0,                                /* Expression: stime
-                                        * Referenced by: '<S52>/control input u exceeds bounds'
+                                        * Referenced by: '<S53>/control input u exceeds bounds'
                                         */
   1.0,                                 /* Expression: stype
-                                        * Referenced by: '<S52>/control input u exceeds bounds'
+                                        * Referenced by: '<S53>/control input u exceeds bounds'
                                         */
   0.0,                                 /* Expression: btype
-                                        * Referenced by: '<S52>/control input u exceeds bounds'
+                                        * Referenced by: '<S53>/control input u exceeds bounds'
                                         */
   -1.0,                                /* Expression: width
-                                        * Referenced by: '<S54>/alpha_VSP1'
+                                        * Referenced by: '<S55>/alpha_VSP1'
                                         */
   1.0,                                 /* Expression: dtype
-                                        * Referenced by: '<S54>/alpha_VSP1'
+                                        * Referenced by: '<S55>/alpha_VSP1'
                                         */
   2.0,                                 /* Expression: portnum
-                                        * Referenced by: '<S54>/alpha_VSP1'
+                                        * Referenced by: '<S55>/alpha_VSP1'
                                         */
   -1.0,                                /* Expression: stime
-                                        * Referenced by: '<S54>/alpha_VSP1'
+                                        * Referenced by: '<S55>/alpha_VSP1'
                                         */
   1.0,                                 /* Expression: stype
-                                        * Referenced by: '<S54>/alpha_VSP1'
+                                        * Referenced by: '<S55>/alpha_VSP1'
                                         */
   0.0,                                 /* Expression: btype
-                                        * Referenced by: '<S54>/alpha_VSP1'
+                                        * Referenced by: '<S55>/alpha_VSP1'
                                         */
   -1.0,                                /* Expression: width
-                                        * Referenced by: '<S54>/alpha_VSP2'
+                                        * Referenced by: '<S55>/alpha_VSP2'
                                         */
   1.0,                                 /* Expression: dtype
-                                        * Referenced by: '<S54>/alpha_VSP2'
+                                        * Referenced by: '<S55>/alpha_VSP2'
                                         */
   2.0,                                 /* Expression: portnum
-                                        * Referenced by: '<S54>/alpha_VSP2'
+                                        * Referenced by: '<S55>/alpha_VSP2'
                                         */
   -1.0,                                /* Expression: stime
-                                        * Referenced by: '<S54>/alpha_VSP2'
+                                        * Referenced by: '<S55>/alpha_VSP2'
                                         */
   1.0,                                 /* Expression: stype
-                                        * Referenced by: '<S54>/alpha_VSP2'
+                                        * Referenced by: '<S55>/alpha_VSP2'
                                         */
   0.0,                                 /* Expression: btype
-                                        * Referenced by: '<S54>/alpha_VSP2'
+                                        * Referenced by: '<S55>/alpha_VSP2'
                                         */
   -1.0,                                /* Expression: width
-                                        * Referenced by: '<S54>/omega_VSP1'
+                                        * Referenced by: '<S55>/omega_VSP1'
                                         */
   1.0,                                 /* Expression: dtype
-                                        * Referenced by: '<S54>/omega_VSP1'
+                                        * Referenced by: '<S55>/omega_VSP1'
                                         */
   2.0,                                 /* Expression: portnum
-                                        * Referenced by: '<S54>/omega_VSP1'
+                                        * Referenced by: '<S55>/omega_VSP1'
                                         */
   -1.0,                                /* Expression: stime
-                                        * Referenced by: '<S54>/omega_VSP1'
+                                        * Referenced by: '<S55>/omega_VSP1'
                                         */
   1.0,                                 /* Expression: stype
-                                        * Referenced by: '<S54>/omega_VSP1'
+                                        * Referenced by: '<S55>/omega_VSP1'
                                         */
   0.0,                                 /* Expression: btype
-                                        * Referenced by: '<S54>/omega_VSP1'
+                                        * Referenced by: '<S55>/omega_VSP1'
                                         */
   -1.0,                                /* Expression: width
-                                        * Referenced by: '<S54>/omega_VSP2'
+                                        * Referenced by: '<S55>/omega_VSP2'
                                         */
   1.0,                                 /* Expression: dtype
-                                        * Referenced by: '<S54>/omega_VSP2'
+                                        * Referenced by: '<S55>/omega_VSP2'
                                         */
   2.0,                                 /* Expression: portnum
-                                        * Referenced by: '<S54>/omega_VSP2'
+                                        * Referenced by: '<S55>/omega_VSP2'
                                         */
   -1.0,                                /* Expression: stime
-                                        * Referenced by: '<S54>/omega_VSP2'
+                                        * Referenced by: '<S55>/omega_VSP2'
                                         */
   1.0,                                 /* Expression: stype
-                                        * Referenced by: '<S54>/omega_VSP2'
+                                        * Referenced by: '<S55>/omega_VSP2'
                                         */
   0.0,                                 /* Expression: btype
-                                        * Referenced by: '<S54>/omega_VSP2'
+                                        * Referenced by: '<S55>/omega_VSP2'
                                         */
   -1.0,                                /* Expression: width
-                                        * Referenced by: '<S54>/u_BT'
+                                        * Referenced by: '<S55>/u_BT'
                                         */
   1.0,                                 /* Expression: dtype
-                                        * Referenced by: '<S54>/u_BT'
+                                        * Referenced by: '<S55>/u_BT'
                                         */
   2.0,                                 /* Expression: portnum
-                                        * Referenced by: '<S54>/u_BT'
+                                        * Referenced by: '<S55>/u_BT'
                                         */
   -1.0,                                /* Expression: stime
-                                        * Referenced by: '<S54>/u_BT'
+                                        * Referenced by: '<S55>/u_BT'
                                         */
   1.0,                                 /* Expression: stype
-                                        * Referenced by: '<S54>/u_BT'
+                                        * Referenced by: '<S55>/u_BT'
                                         */
   0.0,                                 /* Expression: btype
-                                        * Referenced by: '<S54>/u_BT'
+                                        * Referenced by: '<S55>/u_BT'
                                         */
   -1.0,                                /* Expression: width
-                                        * Referenced by: '<S54>/u_VSP1'
+                                        * Referenced by: '<S55>/u_VSP1'
                                         */
   1.0,                                 /* Expression: dtype
-                                        * Referenced by: '<S54>/u_VSP1'
+                                        * Referenced by: '<S55>/u_VSP1'
                                         */
   2.0,                                 /* Expression: portnum
-                                        * Referenced by: '<S54>/u_VSP1'
+                                        * Referenced by: '<S55>/u_VSP1'
                                         */
   -1.0,                                /* Expression: stime
-                                        * Referenced by: '<S54>/u_VSP1'
+                                        * Referenced by: '<S55>/u_VSP1'
                                         */
   1.0,                                 /* Expression: stype
-                                        * Referenced by: '<S54>/u_VSP1'
+                                        * Referenced by: '<S55>/u_VSP1'
                                         */
   0.0,                                 /* Expression: btype
-                                        * Referenced by: '<S54>/u_VSP1'
+                                        * Referenced by: '<S55>/u_VSP1'
                                         */
   -1.0,                                /* Expression: width
-                                        * Referenced by: '<S54>/u_VSP2'
+                                        * Referenced by: '<S55>/u_VSP2'
                                         */
   1.0,                                 /* Expression: dtype
-                                        * Referenced by: '<S54>/u_VSP2'
+                                        * Referenced by: '<S55>/u_VSP2'
                                         */
   2.0,                                 /* Expression: portnum
-                                        * Referenced by: '<S54>/u_VSP2'
+                                        * Referenced by: '<S55>/u_VSP2'
                                         */
   -1.0,                                /* Expression: stime
-                                        * Referenced by: '<S54>/u_VSP2'
+                                        * Referenced by: '<S55>/u_VSP2'
                                         */
   1.0,                                 /* Expression: stype
-                                        * Referenced by: '<S54>/u_VSP2'
+                                        * Referenced by: '<S55>/u_VSP2'
                                         */
   0.0,                                 /* Expression: btype
-                                        * Referenced by: '<S54>/u_VSP2'
+                                        * Referenced by: '<S55>/u_VSP2'
                                         */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<S13>/U_vsp2'
@@ -1243,6 +1240,9 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
                                         */
   0.0,                                 /* Expression: btype
                                         * Referenced by: '<S13>/U_vsp2'
+                                        */
+  1.0,                                 /* Expression: 1
+                                        * Referenced by: '<Root>/Gain6'
                                         */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<Root>/tau_y_rev'
@@ -2228,9 +2228,9 @@ NI_ParamSizeWidth P_ctrl_student_HIL_T_sizes[] DataSection(
 
   { sizeof(real_T), 1, 0 },
 
-  { sizeof(real_T), 3, 0 },
-
   { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 3, 0 },
 
   { sizeof(real_T), 1, 0 },
 
